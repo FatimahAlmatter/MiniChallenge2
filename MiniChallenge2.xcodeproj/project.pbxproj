@@ -40,7 +40,7 @@
 		32A133AE2798834F004452D9 /* PostProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProject.swift; sourceTree = "<group>"; };
 		32A133B027988364004452D9 /* MarketerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketerProfile.swift; sourceTree = "<group>"; };
 		32A133B227988374004452D9 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		32A133B427988390004452D9 /* Offers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offers.swift; sourceTree = "<group>"; };
+		32A133B427988390004452D9 /* Offers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offers.swift; sourceTree = "<group>"; usesTabs = 0; };
 		32A133B6279883A4004452D9 /* DirectMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessages.swift; sourceTree = "<group>"; };
 		32A133B8279883B2004452D9 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		32A133D627989554004452D9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };

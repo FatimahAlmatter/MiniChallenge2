@@ -42,14 +42,15 @@ struct Offers: View {
                                 .multilineTextAlignment(.leading)
                                 .padding(.trailing, 31.0)
                                 .frame(width: 140.0)
-                                
+                           
+                            
                             Image(systemName: "message.circle.fill")
                                 .resizable()
                                 .frame(width: 30, height: 30)
                             .foregroundColor(Color("blue"))
                             .padding(.leading, 80.0)
                             .padding(.bottom, 1.0)
-                            
+                           
                         }
                         
                         HStack{
@@ -101,11 +102,59 @@ struct Offers: View {
                     }
                     
                     .padding([.bottom, .trailing], 42.0)
-
-
+                    HStack{
+                        Image(systemName: "dollarsign.circle")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(Color("Green"))
+                            .padding(.trailing, 11.0)
+                        Text("100$")
+                            .foregroundColor(Color("DarkGrey"))
+                            .padding(.trailing, 90.0)
+                        Image(systemName: "clock")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(Color.red)
+                        
+                        Text("2 weeks")
+                            .foregroundColor(Color("DarkGrey"))
+                            .padding(.leading, 20)
+                         
+                        
+                    }
+                  
+                    HStack{
+                        
+                        Text("Accept")
+                            .foregroundColor(.white)
+                         
+                            .frame(width: 160, height: 40)
+                            .background(Color("AccentColor"))
+                            .border(Color("AccentColor"))
+                            .cornerRadius(12)
+                    
+                    .padding(.top, 87.0)
+                    .padding(.trailing, 10.0)
+                        Text("Reject")
+                            .foregroundColor(Color("AccentColor"))
+                         
+                            .frame(width: 160, height: 40)
+                            .background(Color(""))
+                          
+                            .cornerRadius(12)
+                            .border(Color("AccentColor"))
+                    
+                    .padding(.top, 87.0)
+                    .padding(.leading, 10.0)
+                        
+                    }
+                    
+                
+                    
                 }
                 .frame(width: 356, height: 160)
-                .padding([.top, .trailing], 59.0)
+                .padding(.top, 59.0)
+                .padding(.trailing, 20.0)
                 .background(Color("CardsColor"))
                 .cornerRadius(12)
             }
