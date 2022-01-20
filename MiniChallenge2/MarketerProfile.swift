@@ -24,8 +24,8 @@ struct MarketerProfile: View {
                 Text("Marketer Major")
                     .font(.custom("SF Pro Rounded", size: 14))
                     .fontWeight(.medium)
-                Image(systemName: "star.fill")
-                      
+              Image(systemName: "star.fill")
+                    .foregroundColor(Color("Yellow"))
             }
         }
        
