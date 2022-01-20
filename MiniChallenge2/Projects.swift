@@ -27,6 +27,12 @@ struct Projects: View {
                     
                 }
                 .padding()
+                
+                VStack(alignment: .leading){
+                    Text("Ad for Sunglasses Store")
+                        
+                    
+                }
             }
             .navigationTitle("Projects")
         }
