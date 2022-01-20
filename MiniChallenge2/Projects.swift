@@ -24,15 +24,31 @@ struct Projects: View {
                         Text("Projects")
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    
                 }
                 .padding()
                 
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 10){
                     Text("Ad for Sunglasses Store")
-                        
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("DarkGrey"))
+                    Text("Date Posted: 20/01/2022")
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("LightGrey"))
+                    Text("Pending")
+                        .font(.custom("SF Pro Rounded", size: 11))
+                        .foregroundColor(.white)
+                        .frame(width: 66, height: 20)
+                        .background(Color("Yellow"))
+                        .cornerRadius(13)
+                    
                     
                 }
+                //card style
+                .frame(width: 356, height: 202)
+                .background(Color("CardsColor"))
+                .cornerRadius(12)
+                
+                
             }
             .navigationTitle("Projects")
         }
