@@ -10,7 +10,11 @@ import SwiftUI
 struct DirectMessages: View {
     var body: some View {
         NavigationView{
-            
+            ZStack{
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 356.0, height: 81.0)
+                    .foregroundColor(Color("CardsColor"))
+                    
             HStack( spacing: 20){
                 Image("img1")
                     .resizable()
@@ -19,7 +23,7 @@ struct DirectMessages: View {
                 ZStack{
                     VStack(alignment: .leading, spacing: 5){
                         HStack{
-                            Text("Anderj")
+                            Text("Abhoy Latif")
                                 .font(.custom("SF Pro Rounded", size: 14))
                             
                                 .fontWeight(.medium)
@@ -31,7 +35,7 @@ struct DirectMessages: View {
                         }
                         HStack {
                             Text("Massage")
-                                .font(.custom("SF Pro Rounded", size: 14))
+                                .font(.custom("SF Pro Rounded", size: 12))
                             
                                 .fontWeight(.medium)
                                 .foregroundColor(Color("LightGrey"))
@@ -46,10 +50,10 @@ struct DirectMessages: View {
                     .foregroundColor(Color("blue"))
                     
             }
-            .frame(width: 356, height: 81)
-            .background(RoundedRectangle(cornerRadius: 12).stroke())
-           
+            .frame(width: 330, height: 81)
             
+           
+            }
             
             
             .padding()
