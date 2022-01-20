@@ -33,6 +33,7 @@ struct ProjectDetails: View {
                                 .resizable()
                                 .frame(width: 60, height: 60)
                                 .clipShape(Circle())
+                            
                             Text("AbhoyLatif")
                                 .font(.custom("SF Pro Rounded", size: 14))
                                 .fontWeight(.medium)
