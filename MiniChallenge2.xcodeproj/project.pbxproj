@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321511D5279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 321511D4279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf */; };
+		321511D7279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 321511D6279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf */; };
 		327649D32799697D00CFDEAF /* ProjectDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327649D22799697D00CFDEAF /* ProjectDetails.swift */; };
 		32A1339927985636004452D9 /* MiniChallenge2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A1339827985636004452D9 /* MiniChallenge2App.swift */; };
 		32A1339B27985636004452D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A1339A27985636004452D9 /* ContentView.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321511D4279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Compact-Rounded-Medium.otf"; path = "../../../../../Library/Fonts/SF-Compact-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		321511D6279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Compact-Rounded-Bold.otf"; path = "../../../../../Library/Fonts/SF-Compact-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		327649D22799697D00CFDEAF /* ProjectDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetails.swift; sourceTree = "<group>"; };
 		32A1339527985636004452D9 /* MiniChallenge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A1339827985636004452D9 /* MiniChallenge2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge2App.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				32A133B6279883A4004452D9 /* DirectMessages.swift */,
 				32A133B8279883B2004452D9 /* Chat.swift */,
 				32A1339C27985637004452D9 /* Assets.xcassets */,
+				321511D4279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf */,
+				321511D6279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf */,
 				32A1339E27985637004452D9 /* Preview Content */,
 			);
 			path = MiniChallenge2;
@@ -156,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32A133D727989554004452D9 /* Launch Screen.storyboard in Resources */,
+				321511D7279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf in Resources */,
+				321511D5279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf in Resources */,
 				32A133A027985637004452D9 /* Preview Assets.xcassets in Resources */,
 				32A1339D27985637004452D9 /* Assets.xcassets in Resources */,
 			);
