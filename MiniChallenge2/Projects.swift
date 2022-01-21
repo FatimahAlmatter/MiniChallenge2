@@ -126,16 +126,8 @@ struct Projects: View {
             }
             .navigationTitle("Projects")
         }
-        
-        
-        
     }
-    
-    
 }
-
-
-
 
 struct Projects_Previews: PreviewProvider {
     static var previews: some View {
