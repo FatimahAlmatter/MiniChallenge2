@@ -23,6 +23,7 @@
 		32A133B7279883A4004452D9 /* DirectMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A133B6279883A4004452D9 /* DirectMessages.swift */; };
 		32A133B9279883B2004452D9 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A133B8279883B2004452D9 /* Chat.swift */; };
 		32A133D727989554004452D9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A133D627989554004452D9 /* Launch Screen.storyboard */; };
+		32C37197279B397B00DF9D23 /* SF-Compact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32C37196279B397B00DF9D23 /* SF-Compact.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		32A133B6279883A4004452D9 /* DirectMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessages.swift; sourceTree = "<group>"; };
 		32A133B8279883B2004452D9 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		32A133D627989554004452D9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		32C37196279B397B00DF9D23 /* SF-Compact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Compact.ttf"; path = "../../../../../Library/Fonts/SF-Compact.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				32A133B6279883A4004452D9 /* DirectMessages.swift */,
 				32A133B8279883B2004452D9 /* Chat.swift */,
 				32A1339C27985637004452D9 /* Assets.xcassets */,
+				32C37196279B397B00DF9D23 /* SF-Compact.ttf */,
 				321511D4279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf */,
 				321511D6279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf */,
 				32A1339E27985637004452D9 /* Preview Content */,
@@ -164,6 +167,7 @@
 				32A133D727989554004452D9 /* Launch Screen.storyboard in Resources */,
 				321511D7279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf in Resources */,
 				321511D5279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf in Resources */,
+				32C37197279B397B00DF9D23 /* SF-Compact.ttf in Resources */,
 				32A133A027985637004452D9 /* Preview Assets.xcassets in Resources */,
 				32A1339D27985637004452D9 /* Assets.xcassets in Resources */,
 			);
