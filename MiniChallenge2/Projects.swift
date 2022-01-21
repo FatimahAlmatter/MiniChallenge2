@@ -28,7 +28,6 @@ struct Projects: View {
         ,ProjectData(projectTitle: "Ad for a Service", projectDate: "Date Posted: 09/09/2021", status: "Done")
     ]
     
-    
     var body: some View {
         NavigationView{
             ScrollView{
