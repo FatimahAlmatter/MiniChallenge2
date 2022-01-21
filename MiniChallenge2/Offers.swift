@@ -43,15 +43,19 @@ struct Offers: View {
                                 .padding(.trailing, 31.0)
                                 .frame(width: 140.0)
                            
-                            
-                            Image(systemName: "message.circle.fill")
+                           
+                            NavigationLink(destination: DirectMessages()){
+                        Image(systemName: "message.circle.fill")
                                 .resizable()
                                 .frame(width: 30, height: 30)
                             .foregroundColor(Color("blue"))
                             .padding(.leading, 80.0)
                             .padding(.bottom, 1.0)
-                           
+                            
                         }
+                            
+                        }
+                     
                         
                         HStack{
                             Image(systemName: "star.fill")
@@ -140,9 +144,9 @@ struct Offers: View {
                          
                             .frame(width: 160, height: 40)
                             .background(Color(""))
-                          
-                            .cornerRadius(12)
                             .border(Color("AccentColor"))
+                            .cornerRadius(12)
+                            
                     
                     .padding(.top, 87.0)
                     .padding(.leading, 10.0)
