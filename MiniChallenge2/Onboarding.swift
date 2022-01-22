@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Onboarding: View {
+    @State var showMainScreen = false
     var body: some View {
         ZStack{
             Circle()
@@ -28,17 +29,21 @@ struct Onboarding: View {
                 .font(Font.custom("SF Compact", size: 30))
                 .lineSpacing(6)
             
-            NavigationLink {
+            if showMainScreen {
                 ContentView()
-            } label: {
-                Text("START")
-                    .font(Font.custom("SF Compact", size: 15))
-                    .foregroundColor(.white)
-                    .frame(width: 160, height: 40)
-                    .background(Color("AccentColor"))
-                    .cornerRadius(12)
+            } else {
+                Button {
+                    self.showMainScreen = true
+                } label: {
+                    Text("START")
+                        .font(Font.custom("SF Compact", size: 15))
+                        .foregroundColor(.white)
+                        .frame(width: 160, height: 40)
+                        .background(Color("AccentColor"))
+                        .cornerRadius(12)
+                }
+                .padding(.top,560)
             }
-            .padding(.top,560)
             
         }
     }

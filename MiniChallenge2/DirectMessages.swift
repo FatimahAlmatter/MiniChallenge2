@@ -8,59 +8,59 @@
 import SwiftUI
 
 struct DirectMessages: View {
+    
+    //Define message details
+    struct MessageDetails : Hashable{
+        var marketerName: String
+        var message: String
+        var image: String
+        var unreadMsg: String
+    }
+    
+    //Define array from struct
+    var messages: [MessageDetails] = [
+        MessageDetails(marketerName: "Abhoy Latif", message: "Thats ok", image: "img1", unreadMsg: "1")
+        ,MessageDetails(marketerName: "Abbie Wilson", message: "how much will pay?", image: "img2", unreadMsg: "0")
+        ,MessageDetails(marketerName: "Abayo Stevens", message: "can you extend submission date?", image: "img3", unreadMsg: "0")
+        ,MessageDetails(marketerName: "Aasiya Jayavant", message: "thank you", image: "Group 5", unreadMsg: "0")]
+    
     var body: some View {
         NavigationView{
-            ZStack{
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 356.0, height: 81.0)
-                    .foregroundColor(Color("CardsColor"))
-                    
-            HStack( spacing: 20){
-                Image("img1")
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .clipShape(Circle())
-                ZStack{
-                    VStack(alignment: .leading, spacing: 5){
-                        HStack{
-                            Text("Abhoy Latif")
-                                .font(.custom("SF Pro Rounded", size: 14))
-                            
-                                .fontWeight(.medium)
+            ScrollView{
+                ForEach(messages, id: \.self) { chat in
+                    HStack(spacing: 20){
+                        Image(chat.image)
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .clipShape(Circle())
+                        VStack(alignment: .leading, spacing: 5){
+                            Text(chat.marketerName)
+                                .font(.custom("SF Compact Rounded Medium", size: 16))
+                                .foregroundColor(Color("DarkGrey"))
+                            Text(chat.message)
+                                .font(.custom("SF Compact Rounded Medium", size: 14))
                                 .foregroundColor(Color("LightGrey"))
-                            
-                            Spacer()
-                            
-                           
                         }
-                        HStack {
-                            Text("Massage")
-                                .font(.custom("SF Pro Rounded", size: 12))
-                            
-                                .fontWeight(.medium)
-                                .foregroundColor(Color("LightGrey"))
-                            
+                        Spacer()
+                        
+                        if chat.unreadMsg == "1"{
+                            Image(systemName: "1.circle.fill")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color("blue"))
                         }
                     }
-                }
-                Image(systemName: "1.circle.fill")
-                    .resizable()
-               
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(Color("blue"))
+                    .padding()
+                    .frame(width: 356, height: 81)
+                    .background(Color("CardsColor"))
+                    .cornerRadius(12)
                     
+                }
+                .navigationTitle("Direct Massages")
+                .navigationBarItems(trailing: Button(action: {}) {
+                    Image(systemName: "square.and.pencil")
+                })
             }
-            .frame(width: 330, height: 81)
-            
-           
-            }
-            
-            
-            .padding()
-            .navigationTitle("Direct Massages")
-            .navigationBarItems(trailing: Button(action: {}) {
-                Image(systemName: "square.and.pencil")
-            })
         }
     }
 }
