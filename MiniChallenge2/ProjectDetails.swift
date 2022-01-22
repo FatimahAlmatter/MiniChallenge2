@@ -12,10 +12,10 @@ struct ProjectDetails: View {
     @State  var textDesD: String = ""
     @State  var textOtherD: String = ""
     @State  var textBudgetD: String = ""
+    @State  var selectionDateD: Date = Date()
     var body: some View {
+        
         NavigationView{
-            
-            
             VStack(alignment: .leading){
                 
             Text("Project Name")
@@ -24,9 +24,7 @@ struct ProjectDetails: View {
                 .foregroundColor(Color("LightGrey"))
                 
             TextField("Enter project name ", text: $textNameD )
-              
-                
-            
+ 
          Text("Project Description")
                 .fontWeight(.bold)
                 .font(.system(size: 16))
@@ -34,10 +32,9 @@ struct ProjectDetails: View {
             TextField("Enter project description", text: $textDesD)
             
                   
-         Text("Time\n") // calander tab
-                .fontWeight(.bold)
-                .font(.system(size: 16))
-                .foregroundColor(Color("LightGrey"))
+                DatePicker("Time", selection: $selectionDateD)
+                    .foregroundColor(Color("LightGrey"))
+                    .font(.system(size: 16))
             
           Text("Category\n") // drop-down lis
                 .fontWeight(.bold)
@@ -58,6 +55,12 @@ struct ProjectDetails: View {
                 .fontWeight(.bold)
                 .font(.system(size: 16))
                 .foregroundColor(Color("LightGrey"))
+                    
+                    ZStack{
+                        
+                        TextField("Files", text: .constant(""))
+                        
+                    }
             
            Text("Budget")
                 .fontWeight(.bold)
@@ -72,7 +75,11 @@ struct ProjectDetails: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             
     .navigationTitle("Project Details")
-    .navigationBarTitleDisplayMode(.inline)
+    .navigationBarTitleDisplayMode(.inline) 
+    .toolbar(content: {
+        Text("Save")
+            .foregroundColor(Color.accentColor)
+    })
         }
     
     }
