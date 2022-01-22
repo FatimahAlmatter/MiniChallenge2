@@ -19,16 +19,13 @@ struct ProjectDetails: View {
             VStack(alignment: .leading){
                 
             Text("Project Name")
-                .fontWeight(.bold)
-                .font(.system(size: 16))
-                .foregroundColor(Color("LightGrey"))
+                .fontWeight(.bold)  
                 
             TextField("Enter project name ", text: $textNameD )
  
          Text("Project Description")
                 .fontWeight(.bold)
-                .font(.system(size: 16))
-                .foregroundColor(Color("LightGrey"))
+                
             TextField("Enter project description", text: $textDesD)
             
                   
@@ -38,23 +35,18 @@ struct ProjectDetails: View {
             
           Text("Category\n") // drop-down lis
                 .fontWeight(.bold)
-                .font(.system(size: 16))
-                .foregroundColor(Color("LightGrey"))
-                
+
             
                 Group{
                     
            Text("Others")
                 .fontWeight(.bold)
-                .font(.system(size: 16))
-                .foregroundColor(Color("LightGrey"))
+
             
             TextField(".. ", text: $textOtherD)
             
                Text("Upload Files")
                 .fontWeight(.bold)
-                .font(.system(size: 16))
-                .foregroundColor(Color("LightGrey"))
                     
                     ZStack{
                         
@@ -64,8 +56,7 @@ struct ProjectDetails: View {
             
            Text("Budget")
                 .fontWeight(.bold)
-                .font(.system(size: 16))
-                .foregroundColor(Color("LightGrey"))
+
             
         TextField("1000 - 2000", text: $textBudgetD)
                     
@@ -73,6 +64,10 @@ struct ProjectDetails: View {
         }
             .padding()
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .font(.system(size: 16))
+            .foregroundColor(Color("LightGrey"))
+            
+            
             
     .navigationTitle("Project Details")
     .navigationBarTitleDisplayMode(.inline) 

@@ -27,8 +27,6 @@ struct PostProject: View {
                         
                         Text("Project Name")
                             .fontWeight(.bold)
-                            .font(.system(size: 16))
-                            .foregroundColor(Color("LightGrey"))
                         
                         TextField("Enter project name ", text: $textName )
                         
@@ -36,8 +34,7 @@ struct PostProject: View {
                         
                         Text("Project Description")
                             .fontWeight(.bold)
-                            .font(.system(size: 16))
-                            .foregroundColor(Color("LightGrey"))
+                        
                         TextField("Enter project description", text: $textDes)
                         
                         Spacer()
@@ -46,30 +43,27 @@ struct PostProject: View {
                             //
                             
                             DatePicker("Time", selection: $selectionDate)
-                                .foregroundColor(Color("LightGrey"))
-                                .font(.system(size: 16))
+                          
                                 
                             
                               
                             
                             Text("Category\n") // drop-down lis
                                 .fontWeight(.bold)
-                                .font(.system(size: 16))
-                                .foregroundColor(Color("LightGrey"))
+                                
                             
                             
                             Text("Others")
                                 .fontWeight(.bold)
                                 .font(.system(size: 16))
-                                .foregroundColor(Color("LightGrey"))
+                            
                             
                             TextField(".. ", text: $textOther)
                         
                         
                         Text("Upload Files")
                             .fontWeight(.bold)
-                            .font(.system(size: 16))
-                            .foregroundColor(Color("LightGrey"))
+                       
                         
                         ZStack{
                             
@@ -79,8 +73,7 @@ struct PostProject: View {
                         }
                         Text("Budget")
                             .fontWeight(.bold)
-                            .font(.system(size: 16))
-                            .foregroundColor(Color("LightGrey"))
+                    
                         
                         TextField("Ex : 1000 - 2000", text: $textBudget)
                         
@@ -88,7 +81,8 @@ struct PostProject: View {
                     }
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
+                    .font(.system(size: 16))
+                    .foregroundColor(Color("LightGrey"))
                     
                     Spacer()
                     
