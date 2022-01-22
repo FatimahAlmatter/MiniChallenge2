@@ -28,9 +28,8 @@ struct Onboarding: View {
                 .font(Font.custom("SF Compact", size: 30))
                 .lineSpacing(6)
             
-            
             NavigationLink {
-                Projects()
+                ContentView()
             } label: {
                 Text("START")
                     .font(Font.custom("SF Compact", size: 15))
