@@ -8,8 +8,39 @@
 import SwiftUI
 
 struct Notifications: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView{
+                notification(title: "New offer proposed for Ad for Sunglasses Store")
+                notification(title: "New offer proposed for Online Service Ad")
+                notification(title: "Ad for Perfume status changed to Done")
+                
+            }
+            .navigationTitle("Notifications")
+            .toolbar(content: {
+                Text("Clear All")
+                    .foregroundColor(Color.accentColor)
+            })
+            
+        }
+    }
+    func notification(title:String) -> some View{
+        return HStack{
+            Text(title)
+                .font(.custom("SF Compact Rounded Medium", size: 17))
+                .foregroundColor(Color("DarkGrey"))
+                .lineLimit(nil)
+            
+            Spacer()
+            Image(systemName: "multiply.circle.fill")
+                .foregroundColor(Color.accentColor)
+                .padding(.bottom,25)
+        }
+        .padding()
+        .frame(width: 356, alignment: .leading)
+        .background(Color("CardsColor"))
+        .cornerRadius(12)
     }
 }
 
