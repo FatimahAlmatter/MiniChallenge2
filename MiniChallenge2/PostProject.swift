@@ -29,7 +29,7 @@ struct PostProject: View {
                 
                 VStack{
                     
-                    VStack(alignment: .leading){
+                    VStack(alignment: .leading ){
                         
                         Text("Project Name")
                             .fontWeight(.bold)
@@ -132,9 +132,8 @@ struct PostProject: View {
                         }
                         .frame(width: 160, height: 40)
                         .background(Color.white)
-                        .cornerRadius(12)
-                        //// لسا بيتعدل
-                        .border(Color("AccentColor"), width: 0.5)
+                        .overlay(RoundedRectangle(cornerRadius :12)
+                                    .stroke(Color("AccentColor")))
                     }
 
                     }
