@@ -63,10 +63,10 @@ struct PostProject: View {
                                 }
                                         
                                  } label: {
-                                     VStack(spacing: 5){
+                                     VStack(alignment:.leading ,spacing: 5){
                                                      HStack{
                                             Text(value.isEmpty ? placeholder : value)
-                                               .foregroundColor(value.isEmpty ? .gray : .black)
+                                    .foregroundColor(value.isEmpty ? .gray : Color("LightGrey"))
                                                 Spacer()
                                                 Image(systemName: "chevron.down")
                                                 .foregroundColor(Color("AccentColor"))
@@ -103,8 +103,8 @@ struct PostProject: View {
                         
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .font(.system(size: 16))
-                    .foregroundColor(Color("LightGrey"))
+                    .font(Font.custom("SF Compact Rounded Medium", size: 16))
+                    .foregroundColor(Color("DarkGrey"))
                     
                        
                 
