@@ -98,9 +98,9 @@ struct Offers: View {
 
 
                     }
-                  
+                    Text("")
                         Divider()
-                   
+              
                     .padding([.bottom, .trailing], 42.0)
                     HStack{
                         Image(systemName: "dollarsign.circle")
