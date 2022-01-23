@@ -20,14 +20,8 @@ struct MarketerProfile: View {
                 .resizable()
                 .frame(width: 650, height: 650, alignment: .center)
                 .padding(.top,1050)
-            
+          
             VStack(alignment: .center, spacing: 12){
-                Image("Bac")
-                    .resizable()
-                    .frame(width: 130, height: 130)
-                    .aspectRatio(contentMode: .fill)
-                    .shadow(radius: 8)
-                
                 Text("Benedikt Safiyulin")
                     .font(Font.custom("SF Compact Rounded Medium", size: 20))
                     .padding(.bottom,-10)
@@ -77,9 +71,16 @@ struct MarketerProfile: View {
                     .padding(.leading, -63.0)
                 
             }
+            
             .frame(width: 356, height: 357)
             .background(Color("CardsColor"))
             .cornerRadius(12)
+            Image("Bac")
+                .resizable()
+                .frame(width: 130, height: 130)
+                .aspectRatio(contentMode: .fill)
+                .shadow(radius: 8)
+                .padding(.bottom, 350.0)
             
         }
     }
