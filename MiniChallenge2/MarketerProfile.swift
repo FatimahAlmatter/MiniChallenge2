@@ -17,6 +17,7 @@ struct MarketerProfile: View {
             
                 .frame(width: 356, height: 357)
             
+            
             VStack{
                 Image( "Bac")
                     .padding()
