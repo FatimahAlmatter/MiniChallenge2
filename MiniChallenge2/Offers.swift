@@ -63,7 +63,6 @@ struct Offers: View {
                                 .resizable()
                                 .frame(width: 15, height: 15)
                                 .foregroundColor(Color("LightGrey"))
-                            
                         }
                     }
                     
@@ -76,6 +75,7 @@ struct Offers: View {
                             .padding(.bottom, 1.0)
                     }
                 }
+                
                 
                 Divider()
                 
@@ -114,7 +114,6 @@ struct Offers: View {
                                     .stroke(Color("AccentColor")))
                     
                 }
-                
                 
             }
             .frame(width: 357, height: 220)
