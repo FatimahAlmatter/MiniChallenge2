@@ -35,8 +35,8 @@ struct Offers: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding()
-            ForEach(offers, id: \.self) { offer in
-                cardStyle(offer.marketerName: offer.priceoffers, offer.timeoffers)
+            ForEach(offers, id: \.self) { offers in
+                cardStyle(offers: offers.marketerName, offers: offers.priceoffers, offers: offers.timeoffers)
             VStack(alignment: .center, spacing: 20){
                 HStack{
                     Image("marketer1")
