@@ -28,7 +28,7 @@ struct DirectMessages: View {
         NavigationView{
             ScrollView{
                 ForEach(messages, id: \.self) { chat in
-                    HStack(spacing: 20){
+                                        HStack(spacing: 20){
                         Image(chat.image)
                             .resizable()
                             .frame(width: 60, height: 60)
@@ -42,13 +42,14 @@ struct DirectMessages: View {
                                 .foregroundColor(Color("LightGrey"))
                         }
                         Spacer()
-                        
+                                            NavigationLink(destination: Chat(), label:{
                         if chat.unreadMsg == "1"{
                             Image(systemName: "1.circle.fill")
                                 .resizable()
                                 .frame(width: 25, height: 25)
                                 .foregroundColor(Color("blue"))
                         }
+                                            })
                     }
                     .padding()
                     .frame(width: 356, height: 81)
@@ -56,11 +57,14 @@ struct DirectMessages: View {
                     .cornerRadius(12)
                     
                 }
+           
                 .navigationTitle("Direct Massages")
                 .navigationBarItems(trailing: Button(action: {}) {
-                    Image(systemName: "square.and.pencil")
+                    Image(systemName: "magnifyingglass")
+                    
                 })
             }
+            
         }
     }
 }
