@@ -16,6 +16,7 @@ struct MarketerProfile: View {
                 .padding(.leading, -16.0)
             
                 .frame(width: 356, height: 357)
+            
             VStack{
                 Image( "Bac")
                     .padding()
@@ -46,14 +47,14 @@ struct MarketerProfile: View {
                     
                 }
                 Divider()
-                    .padding(.bottom, -33.0)
+                    .padding(.bottom, -100.0)
                 
                 HStack{
                     
                     Text("Portfolio Link:")
                         .font(.custom("SF Pro Rounded", size: 16))
                         .fontWeight(.medium)
-                        .padding(.leading, -100.0)
+                        .padding(.leading, -78.0)
                     Link(destination: URL(string:"www.my-portfolio.com")!) {
                         Text("www.my-portfolio.com")
                             .font(.custom("SF Pro Rounded", size: 16))
@@ -71,11 +72,11 @@ struct MarketerProfile: View {
                     .font(.custom("SF Pro Rounded", size: 16))
                     .fontWeight(.medium)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading, -183.0)
+                    .padding(.leading, -171.0)
                 
                 Text("Skills: video editing, photoshop, drawing")
                     .font(.custom("SF Pro Rounded", size: 16))
-                    .padding(.leading, -84.0)
+                    .padding(.leading, -63.0)
             }
             
             
