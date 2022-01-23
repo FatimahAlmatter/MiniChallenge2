@@ -15,7 +15,7 @@ struct Notifications: View {
                 notification(title: "New offer proposed for Ad for Sunglasses Store")
                 notification(title: "New offer proposed for Online Service Ad")
                 notification(title: "Ad for Perfume status changed to Done")
-                
+                notification(title: "New offer proposed for ProjectName")
             }
             .navigationTitle("Notifications")
             .toolbar(content: {
