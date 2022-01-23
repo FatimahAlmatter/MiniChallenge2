@@ -17,7 +17,7 @@ struct Projects: View {
         var projectDate: String
         var status: String
     }
-    
+        
     //Define array from struct
     var projects : [ProjectData] = [
         ProjectData(projectTitle: "Ad for Sunglasses Store", projectDate: "Date Posted: 20/01/2022", status: "Pending")
