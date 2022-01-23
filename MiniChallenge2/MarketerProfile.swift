@@ -15,6 +15,7 @@ struct MarketerProfile: View {
                 .fill(Color.white)
                 .padding(.leading, -16.0)
             
+            
                 .frame(width: 356, height: 357)
             
             
