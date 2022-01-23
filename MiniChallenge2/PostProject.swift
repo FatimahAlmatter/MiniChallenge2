@@ -29,7 +29,7 @@ struct PostProject: View {
                 
                 VStack{
                     
-                    VStack(alignment: .leading ){
+                    VStack(alignment: .leading , spacing: 20 ){
                         
                         Text("Project Name")
                             .fontWeight(.bold)
@@ -50,7 +50,7 @@ struct PostProject: View {
                             DatePicker("Time", selection: $selectionDate)
                                 .font(.headline)
  
-                            
+                            VStack(alignment: .leading, spacing:10){
                             Text("Category")
                                 .fontWeight(.bold)
                         
@@ -70,7 +70,7 @@ struct PostProject: View {
                                                 Spacer()
                                                 Image(systemName: "chevron.down")
                                                 .foregroundColor(Color("AccentColor"))
-                                               .font(Font.system(size: 20, weight: .bold))
+                                               .font(Font.system(size: 20, weight: .medium))
                                                      }
                                                      .padding(.horizontal)
                                                      Rectangle()
@@ -79,7 +79,7 @@ struct PostProject: View {
                                                  }
                                  }
     
-                            
+                            }
                             Text("Others")
                                 .fontWeight(.bold)
                                 .font(.system(size: 16))
@@ -145,6 +145,8 @@ struct PostProject: View {
 }
                                         
                 }
+
+
             
 
 

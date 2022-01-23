@@ -23,7 +23,7 @@ struct ProjectDetails: View {
         
         NavigationView{
             
-            VStack(alignment: .leading){
+            VStack(alignment: .leading , spacing: 20){
                 
             Text("Project Name")
                 .fontWeight(.bold)  
@@ -40,9 +40,10 @@ struct ProjectDetails: View {
                     .font(.headline)
 
             
-          Text("Category\n") // drop-down lis
-                .fontWeight(.bold)
-                
+                VStack(alignment: .leading, spacing:10){
+                Text("Category")
+                    .fontWeight(.bold)
+            
                 Menu {
                     ForEach(dropDownList, id: \.self)
                     { select in
@@ -52,14 +53,14 @@ struct ProjectDetails: View {
                     }
                             
                      } label: {
-                         VStack(spacing: 5){
+                         VStack(alignment:.leading ,spacing: 5){
                                          HStack{
                                 Text(value.isEmpty ? placeholder : value)
-                                   .foregroundColor(value.isEmpty ? .gray : .black)
+                        .foregroundColor(value.isEmpty ? .gray : Color("LightGrey"))
                                     Spacer()
                                     Image(systemName: "chevron.down")
                                     .foregroundColor(Color("AccentColor"))
-                                   .font(Font.system(size: 20, weight: .bold))
+                                   .font(Font.system(size: 20, weight: .medium))
                                          }
                                          .padding(.horizontal)
                                          Rectangle()
@@ -67,6 +68,8 @@ struct ProjectDetails: View {
                                              .frame(height: 2)
                                      }
                      }
+
+                }
 
             
                 Group{
@@ -90,14 +93,14 @@ struct ProjectDetails: View {
                 .fontWeight(.bold)
 
             
-        TextField("1000 - 2000", text: $textBudgetD)
+        TextField("Ex : 1000 - 2000", text: $textBudgetD)
                     
                 }
         }
             .padding()
             .textFieldStyle(RoundedBorderTextFieldStyle())
-            .font(.system(size: 16))
-            .foregroundColor(Color("LightGrey"))
+            .font(Font.custom("SF Compact Rounded Medium", size: 16))
+            .foregroundColor(Color("DarkGrey"))
             
             
             
