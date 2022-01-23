@@ -115,6 +115,7 @@ struct Offers: View {
                     
                 }
                 
+                
             }
             .frame(width: 357, height: 220)
             .background(Color("CardsColor"))
