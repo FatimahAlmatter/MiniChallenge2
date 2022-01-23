@@ -23,7 +23,7 @@ struct ProjectDetails: View {
         
         NavigationView{
             
-            VStack(alignment: .leading , spacing: 20){
+            VStack(alignment: .leading , spacing: 15){
                 
             Text("Project Name")
                 .fontWeight(.bold)  

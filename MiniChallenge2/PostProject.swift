@@ -29,7 +29,7 @@ struct PostProject: View {
                 
                 VStack{
                     
-                    VStack(alignment: .leading , spacing: 20 ){
+                    VStack(alignment: .leading , spacing: 15 ){
                         
                         Text("Project Name")
                             .fontWeight(.bold)
@@ -87,12 +87,18 @@ struct PostProject: View {
                         }
                             TextField(".. ", text: $textOther)
                         
-                  
                         Text("Upload Files")
-                            .fontWeight(.bold)
+                                .fontWeight(.bold)
+                        ZStack{
+                           
+                                TextField("Files", text: .constant(""))
+                            Image(systemName: "paperclip")
+                                .foregroundColor(Color.blue)
+                           .font(Font.system(size: 20, weight: .medium))
+         
+                        }
+//
                         
-                            
-                            TextField("Files", text: .constant(""))
                         Text("Budget")
                             .fontWeight(.bold)
                     
@@ -106,6 +112,7 @@ struct PostProject: View {
                     .font(Font.custom("SF Compact Rounded Medium", size: 16))
                     .foregroundColor(Color("DarkGrey"))
                     
+
                        
                 
                     HStack{
