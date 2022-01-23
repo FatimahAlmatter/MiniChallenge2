@@ -16,6 +16,7 @@ struct ProjectDetails: View {
     var body: some View {
         
         NavigationView{
+            
             VStack(alignment: .leading){
                 
             Text("Project Name")
