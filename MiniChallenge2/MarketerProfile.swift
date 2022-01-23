@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MarketerProfile: View {
     var body: some View {
-        
         ZStack{
             Color.accentColor.edgesIgnoringSafeArea(.all)
             Image("background")

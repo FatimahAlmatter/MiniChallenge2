@@ -97,7 +97,6 @@ struct Offers: View {
                         .font(.custom("SF Compact Rounded Meduim", size: 20))
                         .foregroundColor(Color("DarkGrey"))
                 }
-                
                 HStack{
                     Text("Accept")
                         .font(Font.custom("SF Compact Rounded Medium", size: 15))
