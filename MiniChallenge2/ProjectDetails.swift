@@ -13,6 +13,12 @@ struct ProjectDetails: View {
     @State  var textOtherD: String = ""
     @State  var textBudgetD: String = ""
     @State  var selectionDateD: Date = Date()
+    //// for menu
+    @State var value = ""
+    var placeholder = "Select Option"
+    var dropDownList = ["Article","Video","Social Media Post","Other"]
+
+  
     var body: some View {
         
         NavigationView{
@@ -31,11 +37,36 @@ struct ProjectDetails: View {
             
                   
                 DatePicker("Time", selection: $selectionDateD)
-                    .foregroundColor(Color("LightGrey"))
-                    .font(.system(size: 16))
+                    .font(.headline)
+
             
           Text("Category\n") // drop-down lis
                 .fontWeight(.bold)
+                
+                Menu {
+                    ForEach(dropDownList, id: \.self)
+                    { select in
+                                 Button(select) {
+                                     self.value = select
+                                 }
+                    }
+                            
+                     } label: {
+                         VStack(spacing: 5){
+                                         HStack{
+                                Text(value.isEmpty ? placeholder : value)
+                                   .foregroundColor(value.isEmpty ? .gray : .black)
+                                    Spacer()
+                                    Image(systemName: "chevron.down")
+                                    .foregroundColor(Color("AccentColor"))
+                                   .font(Font.system(size: 20, weight: .bold))
+                                         }
+                                         .padding(.horizontal)
+                                         Rectangle()
+                                             .fill(Color.orange)
+                                             .frame(height: 2)
+                                     }
+                     }
 
             
                 Group{
