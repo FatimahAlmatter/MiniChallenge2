@@ -171,8 +171,6 @@ struct Offers: View {
                               )
                         }
                    
-                     
-                        
                     }
                     
                     
