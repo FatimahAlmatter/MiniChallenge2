@@ -108,7 +108,6 @@ struct Projects: View {
                 statusStyle(status: status, color: "Green")
                 
             }
-            
             HStack(alignment: .center){
                 NavigationLink {
                     ProjectDetails()
@@ -138,7 +137,6 @@ struct Projects: View {
         .background(Color("CardsColor"))
         .cornerRadius(12)
     }
-    
     
 }
 
