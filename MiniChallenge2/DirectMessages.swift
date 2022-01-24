@@ -22,8 +22,9 @@ struct DirectMessages: View {
         MessageDetails(marketerName: "Abhoy Latif", message: "Thats ok", image: "img1", unreadMsg: "1")
         ,MessageDetails(marketerName: "Abbie Wilson", message: "how much will pay?", image: "img2", unreadMsg: "0")
         ,MessageDetails(marketerName: "Abayo Stevens", message: "can you extend submission date?", image: "img3", unreadMsg: "0")
-        ,MessageDetails(marketerName: "Aasiya Jayavant", message: "thank you", image: "Group 5", unreadMsg: "0")]
-    
+        ,MessageDetails(marketerName: "Aasiya Jayavant", message: "thank you", image: "Group 5", unreadMsg: "0")
+    ,MessageDetails(marketerName: "Aaron Almaraz", message: "thank you", image: "img5", unreadMsg: "0")]
+                    
     var body: some View {
         NavigationView{
             ScrollView{
