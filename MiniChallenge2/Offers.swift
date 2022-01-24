@@ -40,11 +40,13 @@ struct Offers: View {
               // cardStyle(offers: offers.marketerName, offers: offers.priceoffers, offers: offers.timeoffers)
             VStack(alignment: .center, spacing: 20){
                 HStack{
+                    NavigationLink(destination: MarketerProfile()){
                     Image(item.marketerImage)
                         .resizable()
                         .padding(.trailing, 1.0)
                         .frame(width: 60, height: 60)
                         .clipShape(Circle())
+                    }
                     VStack(alignment: .leading){
                         Text(item.marketerName)
                             .lineLimit(nil)
