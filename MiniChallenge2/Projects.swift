@@ -138,7 +138,6 @@ struct Projects: View {
         .cornerRadius(12)
     }
     
-    
 }
 
 
