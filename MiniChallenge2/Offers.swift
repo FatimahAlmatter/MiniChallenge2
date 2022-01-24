@@ -8,6 +8,7 @@
 import SwiftUI
 struct Offers: View {
     @State var allProjects = 0
+    @State var showingAlert=false
     struct offers : Hashable{
         var marketerName: String
         var priceoffers: String
@@ -117,12 +118,29 @@ struct Offers: View {
                 }
              
                 HStack{
-                    Text("Accept")
-                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                        .foregroundColor(.white)
-                        .frame(width: 160, height: 40)
-                        .background(Color("AccentColor"))
-                        .cornerRadius(12)
+                   Button {
+                       showingAlert=true
+                        
+                    }
+            label: {
+                        Text("Accept")
+                           .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                           .foregroundColor(.white)
+                           .frame(width: 160, height: 40)
+                            .background(Color("AccentColor"))
+                           .cornerRadius(12)
+                        
+                    }
+                    Button("Show Alert") {
+                                showingAlert = true
+                            }
+                            .alert("Important message", isPresented: $showingAlert) {
+                                Button("OK", role: .cancel) { }
+                            }
+                  
+
+                    
+                        
                     Text("Reject")
                         .font(Font.custom("SF Compact Rounded Medium", size: 15))
                         .foregroundColor(Color.accentColor)
