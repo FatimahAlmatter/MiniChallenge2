@@ -14,6 +14,8 @@ struct Chat: View {
             VStack{
                 VStack(alignment: .leading){
             
+                
+                    
                 ZStack{
                     RoundedRectangle(cornerRadius: 17)
                         .frame(width: 233.0, height: 45.0)
