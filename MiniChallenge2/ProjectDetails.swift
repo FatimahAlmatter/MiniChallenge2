@@ -21,7 +21,6 @@ struct ProjectDetails: View {
   
     var body: some View {
         
-        NavigationView{
             
             VStack(alignment: .leading , spacing: 15){
                 
@@ -113,7 +112,7 @@ struct ProjectDetails: View {
         Text("Save")
             .foregroundColor(Color.accentColor)
     })
-        }
+       
     
     }
 }
