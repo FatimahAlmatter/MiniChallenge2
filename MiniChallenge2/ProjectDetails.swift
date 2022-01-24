@@ -83,7 +83,7 @@ struct ProjectDetails: View {
                Text("Upload Files")
                 .fontWeight(.bold)
                     
-                    ZStack{
+                    HStack{
                         
                         TextField("ProjectFile", text: .constant(""))
                         Image(systemName: "paperclip")
