@@ -147,7 +147,7 @@ struct PostProject: View {
                     }
         }
             .navigationTitle("Post Project")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
                     }
   
 }

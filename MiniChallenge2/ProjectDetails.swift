@@ -21,6 +21,8 @@ struct ProjectDetails: View {
   
     var body: some View {
         
+   
+            ScrollView{
             
             VStack(alignment: .leading , spacing: 15){
                 
@@ -105,14 +107,14 @@ struct ProjectDetails: View {
             .foregroundColor(Color("DarkGrey"))
             
             
-            
+            }
     .navigationTitle("Project Details")
     .navigationBarTitleDisplayMode(.inline) 
     .toolbar(content: {
         Text("Save")
             .foregroundColor(Color.accentColor)
     })
-       
+      
     
     }
 }
