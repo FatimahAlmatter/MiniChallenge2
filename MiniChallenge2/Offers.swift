@@ -12,14 +12,15 @@ struct Offers: View {
         var marketerName: String
         var priceoffers: String
         var timeoffers: String
+        var marketerImage: String
     }
         
     //Define array from struct
-    var offers : [offers] = [
-        offers(marketerName: "AbhoyLatif", priceoffers: "100$", timeoffers: "2 Weeks"),
-        offers(marketerName: "Bendikt sfiyulin", priceoffers: "236$", timeoffers: "1 months"),
-        offers(marketerName: "Nout Golstein", priceoffers: "125$", timeoffers: "2 months"),
-        offers(marketerName: "Fahad Bader", priceoffers: "500$", timeoffers: "4 Days")
+    var offer : [offers] = [
+        offers(marketerName: "Khaled Ali", priceoffers: "100$", timeoffers: "2 Weeks", marketerImage: "marketer1"),
+        offers(marketerName: "Nora faisal", priceoffers: "236$", timeoffers: "1 months", marketerImage: "marketer2"),
+        offers(marketerName: "Nout Golstein", priceoffers: "125$", timeoffers: "2 months", marketerImage: "marketer3"),
+        offers(marketerName: "Fahad Bader", priceoffers: "500$", timeoffers: "4 Days", marketerImage: "marketer3")
     ]
     var body: some View {
         ScrollView{
@@ -35,22 +36,24 @@ struct Offers: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding()
-          //  ForEach(offers, id: \.self) { offers in
-               // cardStyle(offers: offers.marketerName, offers: offers.priceoffers, offers: offers.timeoffers)
+            ForEach(offer, id: \.self) { item in
+              // cardStyle(offers: offers.marketerName, offers: offers.priceoffers, offers: offers.timeoffers)
             VStack(alignment: .center, spacing: 20){
                 HStack{
-                    Image("marketer1")
+                    Image(item.marketerImage)
                         .resizable()
                         .padding(.trailing, 1.0)
                         .frame(width: 60, height: 60)
                         .clipShape(Circle())
                     VStack(alignment: .leading){
-                        Text("AbhoyLatif")
+                        Text(item.marketerName)
+                            .lineLimit(nil)
                             .font(.custom("SF Compact Rounded", size: 19))
                             .foregroundColor(Color("DarkGrey"))
                             .padding(.trailing, 31.0)
                             .padding(.bottom,-4)
                             .padding(.top,-6)
+                            
                         
                         HStack{
                             Image(systemName: "star.fill")
@@ -75,36 +78,42 @@ struct Offers: View {
                                 .frame(width: 15, height: 15)
                                 .foregroundColor(Color("LightGrey"))
                         }
-                    }
-                    NavigationLink(destination: DirectMessages()){
+                     }
+                    Spacer()
+                    NavigationLink(destination: Chat()){
                         Image(systemName: "message.circle.fill")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(Color("blue"))
-                            .padding(.leading, 80.0)
+                            .padding(.leading, 100.0)
                             .padding(.bottom, 1.0)
                     }
                 }
                 Divider()
                 
                 HStack{
+                    Spacer()
                     Image(systemName: "dollarsign.circle")
                         .resizable()
                         .frame(width: 25, height: 25)
                         .foregroundColor(Color("Green"))
-                    Text("100$")
+                    Text(item.priceoffers)
                         .font(.custom("SF Compact Rounded Meduim", size: 20))
                         .foregroundColor(Color("DarkGrey"))
-                        .padding(.trailing, 90.0)
+                        //.padding(.trailing, 70.0)
+                    Spacer()
+                       
                     Image(systemName: "clock")
                         .resizable()
                         .frame(width: 25, height: 25)
                         .foregroundColor(Color.red)
                     
-                    Text("2 weeks")
+                    Text(item.timeoffers)
                         .font(.custom("SF Compact Rounded Meduim", size: 20))
                         .foregroundColor(Color("DarkGrey"))
+                    Spacer()
                 }
+             
                 HStack{
                     Text("Accept")
                         .font(Font.custom("SF Compact Rounded Medium", size: 15))
@@ -123,10 +132,11 @@ struct Offers: View {
                 }
                 
             }
+         .padding()
             .frame(width: 357, height: 220)
             .background(Color("CardsColor"))
             .cornerRadius(12)
-            //}
+            }
         }
         .navigationTitle("offers")
         .navigationBarTitleDisplayMode(.large)
