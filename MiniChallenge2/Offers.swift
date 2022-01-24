@@ -35,7 +35,7 @@ struct Offers: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding()
-         //   ForEach(offers, id: \.self) { offers in
+          //  ForEach(offers, id: \.self) { offers in
                // cardStyle(offers: offers.marketerName, offers: offers.priceoffers, offers: offers.timeoffers)
             VStack(alignment: .center, spacing: 20){
                 HStack{
@@ -126,7 +126,7 @@ struct Offers: View {
             .frame(width: 357, height: 220)
             .background(Color("CardsColor"))
             .cornerRadius(12)
-            }
+            //}
         }
         .navigationTitle("offers")
         .navigationBarTitleDisplayMode(.large)
