@@ -29,7 +29,7 @@ struct PostProject: View {
                 
                 VStack{
                     
-                    VStack(alignment: .leading ){
+                    VStack(alignment: .leading , spacing: 15 ){
                         
                         Text("Project Name")
                             .fontWeight(.bold)
@@ -50,7 +50,7 @@ struct PostProject: View {
                             DatePicker("Time", selection: $selectionDate)
                                 .font(.headline)
  
-                            
+                            VStack(alignment: .leading, spacing:10){
                             Text("Category")
                                 .fontWeight(.bold)
                         
@@ -63,14 +63,14 @@ struct PostProject: View {
                                 }
                                         
                                  } label: {
-                                     VStack(spacing: 5){
+                                     VStack(alignment:.leading ,spacing: 5){
                                                      HStack{
                                             Text(value.isEmpty ? placeholder : value)
-                                               .foregroundColor(value.isEmpty ? .gray : .black)
+                                    .foregroundColor(value.isEmpty ? .gray : Color("LightGrey"))
                                                 Spacer()
                                                 Image(systemName: "chevron.down")
                                                 .foregroundColor(Color("AccentColor"))
-                                               .font(Font.system(size: 20, weight: .bold))
+                                               .font(Font.system(size: 20, weight: .medium))
                                                      }
                                                      .padding(.horizontal)
                                                      Rectangle()
@@ -79,7 +79,7 @@ struct PostProject: View {
                                                  }
                                  }
     
-                            
+                            }
                             Text("Others")
                                 .fontWeight(.bold)
                                 .font(.system(size: 16))
@@ -87,12 +87,18 @@ struct PostProject: View {
                         }
                             TextField(".. ", text: $textOther)
                         
-                  
                         Text("Upload Files")
-                            .fontWeight(.bold)
+                                .fontWeight(.bold)
+                        ZStack{
+                           
+                                TextField("Files", text: .constant(""))
+                            Image(systemName: "paperclip")
+                                .foregroundColor(Color.blue)
+                           .font(Font.system(size: 20, weight: .medium))
+         
+                        }
+//
                         
-                            
-                            TextField("Files", text: .constant(""))
                         Text("Budget")
                             .fontWeight(.bold)
                     
@@ -103,9 +109,10 @@ struct PostProject: View {
                         
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .font(.system(size: 16))
-                    .foregroundColor(Color("LightGrey"))
+                    .font(Font.custom("SF Compact Rounded Medium", size: 16))
+                    .foregroundColor(Color("DarkGrey"))
                     
+
                        
                 
                     HStack{
@@ -145,6 +152,8 @@ struct PostProject: View {
 }
                                         
                 }
+
+
             
 
 
