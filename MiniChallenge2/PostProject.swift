@@ -89,12 +89,13 @@ struct PostProject: View {
                         
                         Text("Upload Files")
                                 .fontWeight(.bold)
-                        ZStack{
+                        HStack{
                            
                                 TextField("Files", text: .constant(""))
                             Image(systemName: "paperclip")
                                 .foregroundColor(Color.blue)
                            .font(Font.system(size: 20, weight: .medium))
+                            
          
                         }
 //
