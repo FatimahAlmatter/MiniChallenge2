@@ -170,11 +170,7 @@ struct Offers: View {
                                    dismissButton: .cancel()
                               )
                         }
-                        
-                        
-                        
-                        
-                        
+                   
                      
                         
                     }
