@@ -6,9 +6,21 @@
 //
 
 import SwiftUI
-
 struct Offers: View {
     @State var allProjects = 0
+    struct offers : Hashable{
+        var marketerName: String
+        var priceoffers: String
+        var timeoffers: String
+    }
+        
+    //Define array from struct
+    var offers : [offers] = [
+        offers(marketerName: "AbhoyLatif", priceoffers: "100$", timeoffers: "2 Weeks"),
+        offers(marketerName: "Bendikt sfiyulin", priceoffers: "236$", timeoffers: "1 months"),
+        offers(marketerName: "Nout Golstein", priceoffers: "125$", timeoffers: "2 months"),
+        offers(marketerName: "Fahad Bader", priceoffers: "500$", timeoffers: "4 Days")
+    ]
     var body: some View {
         ScrollView{
             VStack{
@@ -23,16 +35,15 @@ struct Offers: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding()
-            
+            ForEach(offers, id: \.self) { offers in
+                cardStyle(offers: offers.marketerName, offers: offers.priceoffers, offers: offers.timeoffers)
             VStack(alignment: .center, spacing: 20){
-                
                 HStack{
                     Image("marketer1")
                         .resizable()
                         .padding(.trailing, 1.0)
                         .frame(width: 60, height: 60)
                         .clipShape(Circle())
-                    
                     VStack(alignment: .leading){
                         Text("AbhoyLatif")
                             .font(.custom("SF Compact Rounded", size: 19))
@@ -65,7 +76,6 @@ struct Offers: View {
                                 .foregroundColor(Color("LightGrey"))
                         }
                     }
-                    
                     NavigationLink(destination: DirectMessages()){
                         Image(systemName: "message.circle.fill")
                             .resizable()
@@ -75,8 +85,6 @@ struct Offers: View {
                             .padding(.bottom, 1.0)
                     }
                 }
-                
-                
                 Divider()
                 
                 HStack{
@@ -118,6 +126,7 @@ struct Offers: View {
             .frame(width: 357, height: 220)
             .background(Color("CardsColor"))
             .cornerRadius(12)
+            }
         }
         .navigationTitle("offers")
         .navigationBarTitleDisplayMode(.large)
