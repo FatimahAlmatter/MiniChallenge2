@@ -28,7 +28,7 @@ struct ProjectDetails: View {
             Text("Project Name")
                 .fontWeight(.bold)  
                 
-            TextField("Enter project name ", text: $textNameD )
+            TextField("Ad for Sunglasses Store ", text: $textNameD )
  
          Text("Project Description")
                 .fontWeight(.bold)
@@ -85,7 +85,10 @@ struct ProjectDetails: View {
                     
                     ZStack{
                         
-                        TextField("Files", text: .constant(""))
+                        TextField("ProjectFile", text: .constant(""))
+                        Image(systemName: "paperclip")
+                            .foregroundColor(Color.blue)
+                       .font(Font.system(size: 20, weight: .medium))
                         
                     }
             
