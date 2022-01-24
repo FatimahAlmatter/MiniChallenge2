@@ -11,10 +11,10 @@ struct Chat: View {
     @State private var fullText: String = ""
     var body: some View {
         VStack{
+            
             VStack{
                 VStack(alignment: .leading){
             
-                
                     
                 ZStack{
                     RoundedRectangle(cornerRadius: 17)
