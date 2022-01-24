@@ -260,6 +260,8 @@ struct Chat: View {
             })
         
         
+      
+        
         
     }
 }
