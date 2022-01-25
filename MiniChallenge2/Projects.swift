@@ -96,7 +96,7 @@ struct Projects: View {
             }
             HStack(alignment: .center){
                 NavigationLink {
-                    ProjectDetails()
+                    ProjectDetails(id: id)
                 } label: {
                     Text("View Details")
                         .font(Font.custom("SF Compact Rounded Medium", size: 15))

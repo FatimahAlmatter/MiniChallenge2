@@ -9,7 +9,7 @@ import SwiftUI
 struct Offers: View {
     
     @EnvironmentObject var offers : OffersClass
-
+    
     @State var allProjects = 0
     @State var showingAlert = false
     @State var clicked = false
@@ -17,7 +17,7 @@ struct Offers: View {
     
     @State var projectID : Int
     @State var offerStatus : String
-
+    
     var body: some View {
         ScrollView{
             VStack{
@@ -119,24 +119,24 @@ struct Offers: View {
                                 showingAlert = true
                                 
                             } label: {
-                              //  if  item.offerStatus == "Non" {
-                                    Text("Accept")
-                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                        .foregroundColor(.white)
-                                        .frame(width: 160, height: 40)
-                                        .background(Color("AccentColor"))
-                                        .cornerRadius(12)
-                              //  } else {
-//                                    Text("Accepted")
-//                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
-//                                        .foregroundColor(.white)
-//                                        .frame(width: 160, height: 40)
-//                                        .background(Color.green)
-//                                        .cornerRadius(12)
-//                                        .disabled(clicked == false)
-                            //  }
+                                //  if  item.offerStatus == "Non" {
+                                Text("Accept")
+                                    .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                    .foregroundColor(.white)
+                                    .frame(width: 160, height: 40)
+                                    .background(Color("AccentColor"))
+                                    .cornerRadius(12)
+                                //  } else {
+                                //                                    Text("Accepted")
+                                //                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                //                                        .foregroundColor(.white)
+                                //                                        .frame(width: 160, height: 40)
+                                //                                        .background(Color.green)
+                                //                                        .cornerRadius(12)
+                                //                                        .disabled(clicked == false)
+                                //  }
                                 
-                          
+                                
                                 
                             }.alert(isPresented: $showingAlert) {
                                 Alert( title: Text("Succuss ✅"),
@@ -162,8 +162,9 @@ struct Offers: View {
                                 Alert( title: Text("Alert🔴"),
                                        message: Text("Ary you sure you want to reject this offer?"),
                                        primaryButton: .destructive(Text("Reject"), action: {
-//                                    var index = item.id
-//                                    offer.remove(at: index)
+                                    //                                    var index = item.id
+                                    //                                    offer.remove(at: index)
+                                    
                                 })
                                        ,secondaryButton: .cancel()
                                 )

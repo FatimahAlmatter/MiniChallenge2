@@ -28,7 +28,7 @@ struct PostProject: View {
                         Text("Project Name")
                             .fontWeight(.bold)
                         
-                        TextField("Enter project name ", text: $textName )
+                        TextField("Enter project name", text: $textName )
                         
                         Text("Project Description")
                             .fontWeight(.bold)
@@ -99,8 +99,13 @@ struct PostProject: View {
                     HStack{
                         Button {
                             let date = Date.now.formatted(date: .omitted, time: .shortened)
-                            postProject(name: textName, date: " Date Posted:\(date)")
+                            let time = selectionDate.formatted(date: .complete, time: .omitted)
+                            postProject(name: textName, date: date, description: textDes, comments: textOther, budget: textBudget, time: time)
                             textName = ""
+                            textOther = ""
+                            textBudget = ""
+                            textDes = ""
+                            print(projects.projects)
                         } label: {
                             Text("Post")
                                 .fontWeight(.medium)
@@ -134,9 +139,9 @@ struct PostProject: View {
     }
     
     
-    func postProject(name: String, date: String){
+    func postProject(name: String, date: String, description: String, comments: String, budget: String, time: String){
         let id = projects.projects.count + 1
-        let post = ProjectInfoClass.ProjectData(id: id, projectTitle: name, projectDate: date, status: "Pending", offerStatus: "Non")
+        let post = ProjectInfoClass.ProjectData(id: id, projectTitle: name, projectDate: date, status: "Pending", offerStatus: "Non", projectDescription: description, otherComments: comments, projectBudget: budget, time: time)
         // add to begin
         projects.projects.insert(post, at: 0)
         // projects.projects.append(post)
