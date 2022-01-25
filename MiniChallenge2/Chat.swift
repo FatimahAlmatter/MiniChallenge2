@@ -62,6 +62,7 @@ struct Chat: View {
                     let id = 2
                     let chat = Chats(msg: fullText, time: date, id: id)
                     recieverMsg.append(chat)
+                    fullText = ""
                     
                 } label: {
                     Image(systemName: "paperplane.circle.fill")

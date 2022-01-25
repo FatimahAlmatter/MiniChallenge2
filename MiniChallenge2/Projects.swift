@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Projects: View {
     
-    var projectClass = ProjectInfoClass()
+    @EnvironmentObject var projects : ProjectInfoClass
     @State var selected = 0
     
     
@@ -33,27 +33,28 @@ struct Projects: View {
                 
                 if selected == 0 {
                     //iterating over projects
-                    ForEach(projectClass.projects) { project in
-                        cardStyle(title: project.projectTitle, date: project.projectDate, status: project.status)
+                    ForEach(projects.projects) { project in
+                        cardStyle(title: project.projectTitle, date: project.projectDate, status: project.status, id: project.id, offerStatus: project.offerStatus)
+                        
                     }
                     
                 } else if selected == 1 {
-                    ForEach(projectClass.projects) { item in
+                    ForEach(projects.projects) { item in
                         if item.status == "Pending"{
-                            cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status)
+                            cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status, id: item.id, offerStatus: item.offerStatus)
                         }
                     }
                 } else if selected == 2 {
-                    ForEach(projectClass.projects) { item in
+                    ForEach(projects.projects) { item in
                         if item.status == "In Progress"{
-                            cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status)
+                            cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status, id: item.id, offerStatus: item.offerStatus)
                         }
                     }
                     
                 } else {
-                    ForEach(projectClass.projects) { item in
+                    ForEach(projects.projects) { item in
                         if item.status == "Done"{
-                            cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status)
+                            cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status, id: item.id, offerStatus: item.offerStatus)
                         }
                     }
                 }
@@ -73,7 +74,7 @@ struct Projects: View {
             .padding(.bottom,20)
     }
     
-    func cardStyle(title: String, date: String, status: String) -> some View {
+    func cardStyle(title: String, date: String, status: String, id: Int, offerStatus: String) -> some View {
         VStack(alignment: .leading, spacing: 10){
             Text(title)
                 .font(Font.custom("SF Compact Rounded Medium", size: 20))
@@ -106,7 +107,7 @@ struct Projects: View {
                 }
                 
                 NavigationLink {
-                    Offers()
+                    Offers(projectID: id, offerStatus: offerStatus)
                 } label: {
                     Text("Offers")
                         .font(Font.custom("SF Compact Rounded Medium", size: 15))

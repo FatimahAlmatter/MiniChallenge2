@@ -10,6 +10,7 @@
 		321511D5279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 321511D4279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf */; };
 		321511D7279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 321511D6279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf */; };
 		322E8560279FD4180019F6D5 /* ProjectInfoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322E855F279FD4180019F6D5 /* ProjectInfoClass.swift */; };
+		3275CC5E27A04FE10075662E /* OffersClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275CC5D27A04FE10075662E /* OffersClass.swift */; };
 		327649D32799697D00CFDEAF /* ProjectDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327649D22799697D00CFDEAF /* ProjectDetails.swift */; };
 		32A1339927985636004452D9 /* MiniChallenge2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A1339827985636004452D9 /* MiniChallenge2App.swift */; };
 		32A1339B27985636004452D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A1339A27985636004452D9 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 		321511D4279AE4D600D0E768 /* SF-Compact-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Compact-Rounded-Medium.otf"; path = "../../../../../Library/Fonts/SF-Compact-Rounded-Medium.otf"; sourceTree = "<group>"; };
 		321511D6279AE4E600D0E768 /* SF-Compact-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Compact-Rounded-Bold.otf"; path = "../../../../../Library/Fonts/SF-Compact-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		322E855F279FD4180019F6D5 /* ProjectInfoClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoClass.swift; sourceTree = "<group>"; };
+		3275CC5D27A04FE10075662E /* OffersClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersClass.swift; sourceTree = "<group>"; };
 		327649D22799697D00CFDEAF /* ProjectDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetails.swift; sourceTree = "<group>"; };
 		32A1339527985636004452D9 /* MiniChallenge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A1339827985636004452D9 /* MiniChallenge2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge2App.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				32A133D627989554004452D9 /* Launch Screen.storyboard */,
 				322E855F279FD4180019F6D5 /* ProjectInfoClass.swift */,
+				3275CC5D27A04FE10075662E /* OffersClass.swift */,
 				32A1339827985636004452D9 /* MiniChallenge2App.swift */,
 				32A1339A27985636004452D9 /* ContentView.swift */,
 				32A133A827988312004452D9 /* Onboarding.swift */,
@@ -190,6 +193,7 @@
 				327649D32799697D00CFDEAF /* ProjectDetails.swift in Sources */,
 				32A133AB2798832B004452D9 /* Projects.swift in Sources */,
 				32A133B127988364004452D9 /* MarketerProfile.swift in Sources */,
+				3275CC5E27A04FE10075662E /* OffersClass.swift in Sources */,
 				32A133A927988312004452D9 /* Onboarding.swift in Sources */,
 				32A133B327988374004452D9 /* Notifications.swift in Sources */,
 				32A1339927985636004452D9 /* MiniChallenge2App.swift in Sources */,

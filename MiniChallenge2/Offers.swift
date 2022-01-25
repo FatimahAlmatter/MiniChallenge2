@@ -8,26 +8,16 @@
 import SwiftUI
 struct Offers: View {
     
+    @EnvironmentObject var offers : OffersClass
+
     @State var allProjects = 0
-    @State var showingAlert=false
-    @State var clicked=false
-    @State var rejectAlert=false
+    @State var showingAlert = false
+    @State var clicked = false
+    @State var rejectAlert = false
     
-    struct offers : Hashable , Identifiable{
-        var id = UUID()
-        var marketerName: String
-        var priceoffers: String
-        var timeoffers: String
-        var marketerImage: String
-    }
-    
-    //Define array from struct
-    var offer : [offers] = [
-        offers(marketerName: "Khaled Ali", priceoffers: "100$", timeoffers: "2 Weeks", marketerImage: "marketer1"),
-        offers(marketerName: "Nora faisal", priceoffers: "236$", timeoffers: "1 months", marketerImage: "marketer2"),
-        offers(marketerName: "Nout Golstein", priceoffers: "125$", timeoffers: "2 months", marketerImage: "marketer3"),
-        offers(marketerName: "Fahad Bader", priceoffers: "500$", timeoffers: "4 Days", marketerImage: "marketer3")
-    ]
+    @State var projectID : Int
+    @State var offerStatus : String
+
     var body: some View {
         ScrollView{
             VStack{
@@ -42,152 +32,161 @@ struct Offers: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding()
-            ForEach(offer, id: \.self) { item in
-                VStack(alignment: .center, spacing: 20){
-                    HStack{
-                        NavigationLink(destination: MarketerProfile()){
-                            Image(item.marketerImage)
-                                .resizable()
-                                .padding(.trailing, 1.0)
-                                .frame(width: 60, height: 60)
-                                .clipShape(Circle())
+            ForEach(offers.offer) { item in
+                if item.projectID == projectID {
+                    VStack(alignment: .center, spacing: 20){
+                        HStack{
+                            NavigationLink(destination: MarketerProfile()){
+                                Image(item.marketerImage)
+                                    .resizable()
+                                    .padding(.trailing, 1.0)
+                                    .frame(width: 60, height: 60)
+                                    .clipShape(Circle())
+                            }
+                            VStack(alignment: .leading){
+                                Text(item.marketerName)
+                                    .lineLimit(nil)
+                                    .font(.custom("SF Compact Rounded", size: 19))
+                                    .foregroundColor(Color("DarkGrey"))
+                                    .padding(.trailing, 31.0)
+                                    .padding(.bottom,-4)
+                                    .padding(.top,-6)
+                                
+                                
+                                HStack{
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color("Yellow"))
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color("Yellow"))
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color("Yellow"))
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color("Yellow"))
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color("LightGrey"))
+                                }
+                            }
+                            
+                            Spacer()
+                            NavigationLink(destination: Chat()){
+                                Image(systemName: "message.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color("blue"))
+                                    .padding(.leading, 100.0)
+                                    .padding(.bottom, 1.0)
+                            }
                         }
-                        VStack(alignment: .leading){
-                            Text(item.marketerName)
-                                .lineLimit(nil)
-                                .font(.custom("SF Compact Rounded", size: 19))
+                        Divider()
+                        
+                        HStack{
+                            Spacer()
+                            Image(systemName: "dollarsign.circle")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color("Green"))
+                            Text(item.priceoffers)
+                                .font(.custom("SF Compact Rounded Meduim", size: 20))
                                 .foregroundColor(Color("DarkGrey"))
-                                .padding(.trailing, 31.0)
-                                .padding(.bottom,-4)
-                                .padding(.top,-6)
+                            //.padding(.trailing, 70.0)
+                            Spacer()
                             
-                            
-                            HStack{
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .frame(width: 15, height: 15)
-                                    .foregroundColor(Color("Yellow"))
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .frame(width: 15, height: 15)
-                                    .foregroundColor(Color("Yellow"))
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .frame(width: 15, height: 15)
-                                    .foregroundColor(Color("Yellow"))
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .frame(width: 15, height: 15)
-                                    .foregroundColor(Color("Yellow"))
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .frame(width: 15, height: 15)
-                                    .foregroundColor(Color("LightGrey"))
-                            }
-                        }
-                        
-                        Spacer()
-                        NavigationLink(destination: Chat()){
-                            Image(systemName: "message.circle.fill")
+                            Image(systemName: "clock")
                                 .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(Color("blue"))
-                                .padding(.leading, 100.0)
-                                .padding(.bottom, 1.0)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color.red)
+                            
+                            Text(item.timeoffers)
+                                .font(.custom("SF Compact Rounded Meduim", size: 20))
+                                .foregroundColor(Color("DarkGrey"))
+                            Spacer()
                         }
-                    }
-                    Divider()
-                    
-                    HStack{
-                        Spacer()
-                        Image(systemName: "dollarsign.circle")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(Color("Green"))
-                        Text(item.priceoffers)
-                            .font(.custom("SF Compact Rounded Meduim", size: 20))
-                            .foregroundColor(Color("DarkGrey"))
-                        //.padding(.trailing, 70.0)
-                        Spacer()
                         
-                        Image(systemName: "clock")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(Color.red)
-                        
-                        Text(item.timeoffers)
-                            .font(.custom("SF Compact Rounded Meduim", size: 20))
-                            .foregroundColor(Color("DarkGrey"))
-                        Spacer()
-                    }
-                    
-                    HStack{
-                        Button {
-                            clicked = true
-                            showingAlert = true
-                        } label: {
-                            if clicked == false {
-                                Text("Accept")
-                                    .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                    .foregroundColor(.white)
-                                    .frame(width: 160, height: 40)
-                                    .background(Color("AccentColor"))
-                                    .cornerRadius(12)
-                            } else {
-                                Text("Accepted")
-                                    .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                    .foregroundColor(.white)
-                                    .frame(width: 160, height: 40)
-                                    .background(Color.green)
-                                    .cornerRadius(12)
+                        HStack{
+                            Button {
+                                clicked = true
+                                print(item.offerStatus)
+                                showingAlert = true
+                                
+                            } label: {
+                              //  if  item.offerStatus == "Non" {
+                                    Text("Accept")
+                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                        .foregroundColor(.white)
+                                        .frame(width: 160, height: 40)
+                                        .background(Color("AccentColor"))
+                                        .cornerRadius(12)
+                              //  } else {
+//                                    Text("Accepted")
+//                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+//                                        .foregroundColor(.white)
+//                                        .frame(width: 160, height: 40)
+//                                        .background(Color.green)
+//                                        .cornerRadius(12)
+//                                        .disabled(clicked == false)
+                            //  }
+                                
+                          
+                                
+                            }.alert(isPresented: $showingAlert) {
+                                Alert( title: Text("Succuss ✅"),
+                                       message: Text("Project status changed to In Progress"),
+                                       dismissButton: .default(Text("Got it!")))
                             }
-                        }.alert(isPresented: $showingAlert) {
-                            Alert( title: Text("Succuss ✅"),
-                                   message: Text("Project status changed to In Progress"),
-                                   dismissButton: .default(Text("Got it!")))
-                        }
-                        .disabled(clicked == true)
-                        
-                        
-                        Button {
-                            
-                            rejectAlert = true
-                        } label: {
-                            
-                            Text("Reject")
-                                .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                .foregroundColor(Color.accentColor)
-                                .frame(width: 160, height: 40)
-                                .cornerRadius(12)
-                                .overlay(RoundedRectangle(cornerRadius: 12)
-                                            .stroke(Color("AccentColor")))
+                            //.disabled(clicked == true)
                             
                             
-                        }.alert(isPresented: $rejectAlert) {
-                            Alert( title: Text("Alert🔴"),
-                                   message: Text("Ary you sure you want to reject this offer?"),
-                                   primaryButton: .destructive(Text("Reject"), action: {
-                                //offer.remove(at: 0)
-                            })
-                                   ,secondaryButton: .cancel()
-                            )
+                            Button {
+                                rejectAlert = true
+                            } label: {
+                                Text("Reject")
+                                    .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                    .foregroundColor(Color.accentColor)
+                                    .frame(width: 160, height: 40)
+                                    .cornerRadius(12)
+                                    .overlay(RoundedRectangle(cornerRadius: 12)
+                                                .stroke(Color("AccentColor")))
+                                
+                                
+                            }.alert(isPresented: $rejectAlert) {
+                                Alert( title: Text("Alert🔴"),
+                                       message: Text("Ary you sure you want to reject this offer?"),
+                                       primaryButton: .destructive(Text("Reject"), action: {
+//                                    var index = item.id
+//                                    offer.remove(at: index)
+                                })
+                                       ,secondaryButton: .cancel()
+                                )
+                            }
                         }
                     }
+                    .padding()
+                    .frame(width: 357, height: 220)
+                    .background(Color("CardsColor"))
+                    .cornerRadius(12)
+                    
+                    //  if item.
+                    
+                    
                 }
-                .padding()
-                .frame(width: 357, height: 220)
-                .background(Color("CardsColor"))
-                .cornerRadius(12)
             }
+            .navigationTitle("offers")
         }
-        .navigationTitle("offers")
-        .navigationBarTitleDisplayMode(.large)
-        
     }
 }
 
 struct Offers_Previews: PreviewProvider {
     static var previews: some View {
-        Offers()
+        Offers(projectID: 1, offerStatus: "Non")
     }
 }
