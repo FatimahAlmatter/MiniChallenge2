@@ -7,11 +7,14 @@
 
 import SwiftUI
 struct Offers: View {
+    
     @State var allProjects = 0
     @State var showingAlert=false
     @State var clicked=false
     @State var rejectAlert=false
-    struct offers : Hashable{
+    
+    struct offers : Hashable , Identifiable{
+        var id = UUID()
         var marketerName: String
         var priceoffers: String
         var timeoffers: String
@@ -40,7 +43,6 @@ struct Offers: View {
             }
             .padding()
             ForEach(offer, id: \.self) { item in
-                // cardStyle(offers: offers.marketerName, offers: offers.priceoffers, offers: offers.timeoffers)
                 VStack(alignment: .center, spacing: 20){
                     HStack{
                         NavigationLink(destination: MarketerProfile()){
@@ -60,8 +62,7 @@ struct Offers: View {
                                 .padding(.top,-6)
                             
                             
-                         
-                                HStack{
+                            HStack{
                                 Image(systemName: "star.fill")
                                     .resizable()
                                     .frame(width: 15, height: 15)
@@ -78,7 +79,6 @@ struct Offers: View {
                                     .resizable()
                                     .frame(width: 15, height: 15)
                                     .foregroundColor(Color("Yellow"))
-                                //                                .padding(.bottom, 190.0)
                                 Image(systemName: "star.fill")
                                     .resizable()
                                     .frame(width: 15, height: 15)
@@ -147,35 +147,33 @@ struct Offers: View {
                                    dismissButton: .default(Text("Got it!")))
                         }
                         .disabled(clicked == true)
-                    
+                        
+                        
+                        Button {
                             
-                          Button {
-                         
                             rejectAlert = true
                         } label: {
                             
-                                Text("Reject")
-                                    .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                    .foregroundColor(Color.accentColor)
-                                    .frame(width: 160, height: 40)
-                                    .cornerRadius(12)
-                                    .overlay(RoundedRectangle(cornerRadius: 12)
-                                                .stroke(Color("AccentColor")))
-                          
-                               
+                            Text("Reject")
+                                .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                .foregroundColor(Color.accentColor)
+                                .frame(width: 160, height: 40)
+                                .cornerRadius(12)
+                                .overlay(RoundedRectangle(cornerRadius: 12)
+                                            .stroke(Color("AccentColor")))
+                            
                             
                         }.alert(isPresented: $rejectAlert) {
                             Alert( title: Text("Alert🔴"),
                                    message: Text("Ary you sure you want to reject this offer?"),
-                                   dismissButton: .cancel()
-                              )
+                                   primaryButton: .destructive(Text("Reject"), action: {
+                                //offer.remove(at: 0)
+                            })
+                                   ,secondaryButton: .cancel()
+                            )
                         }
-                   
                     }
-                    
-                    
                 }
-                
                 .padding()
                 .frame(width: 357, height: 220)
                 .background(Color("CardsColor"))

@@ -8,267 +8,111 @@
 import SwiftUI
 
 struct Chat: View {
-    @State private var fullText: String = ""
+    @State var fullText: String = ""
+    
+    struct Chats: Hashable{
+        var msg : String
+        var time : String
+        var id : Int
+    }
+    
+    @State var recieverMsg: [Chats] = [
+        Chats(msg: "What is your business for?", time: "9:35 PM", id: 1),
+        Chats(msg: "for hoodies store", time: "9:35 PM", id: 2),
+        Chats(msg: "What is the type of advertisment? video or social media post", time: "9:36 PM", id: 1),
+        Chats(msg: "Video for snapchat ad", time: "9:37 PM", id: 2),
+        Chats(msg: "How many minutes?", time: "9:39 PM", id: 1),
+        Chats(msg: "10 mins", time: "9:50 PM", id: 2),
+        Chats(msg: "and what is your Offer?", time: "9:39 PM", id: 1)]
+    
     var body: some View {
         VStack{
             ScrollView{
-    VStack{
-        VStack(alignment: .leading){
-            
-            ZStack{
-                RoundedRectangle(cornerRadius: 17)
-                    .frame(width: 233.0, height: 45.0)
-                    .foregroundColor(Color("CardsColor"))
-                
-                Text("What is your business for?")
-                    .font(.custom("SF Pro Rounded", size: 14))
-                
-                    .fontWeight(.medium)
-                    .foregroundColor(Color("LightGrey"))
-                    
-                    
-            }
-        
-            Text("9:34")
-                .font(.custom("SF Pro Rounded", size: 12))
-            
-                .fontWeight(.regular)
-                .foregroundColor(Color("LightGrey"))
-                
-        }
-        .padding(.trailing, 120.0)
-        VStack(alignment: .trailing) {
-        
-            ZStack{
-                RoundedRectangle(cornerRadius: 17)
-                    .frame(width: 175.0, height: 45.0)
-                    .foregroundColor(Color(red: 1.033, green: 0.823, blue: 0.749))
-                
-                Text("for hoodies stor")
-                    .font(.custom("SF Pro Rounded", size: 14))
-                
-                    .fontWeight(.medium)
-                    .foregroundColor(Color("LightGrey"))
-                    
-                    
-            }
-        
-            Text("9:35")
-                .font(.custom("SF Pro Rounded", size: 12))
-            
-                .fontWeight(.regular)
-                .foregroundColor(Color("LightGrey"))
-                
-                
-        
-        }
-        .padding(.leading, 178.0)
-        
-        VStack(alignment: .leading) {
-        
-        ZStack{
-                RoundedRectangle(cornerRadius: 17)
-                    .frame(width: 260.0, height: 60.0)
-                    .foregroundColor(Color("CardsColor"))
-                
-                Text("What is the type of advertisment?\("\n")video or social media post?")
-                    .fontWeight(.medium)
-                    .multilineTextAlignment(.center)
-                    .font(.custom("SF Pro Rounded", size: 14))
-                
-                    .foregroundColor(Color("LightGrey"))
-                    
-                    
-            }
-        
-            Text("9:36")
-                .font(.custom("SF Pro Rounded", size: 12))
-            
-                .fontWeight(.regular)
-                .foregroundColor(Color("LightGrey"))
-        }
-        .padding(.trailing, 93.0)
-        
-        VStack(alignment: .trailing) {
-        
-            ZStack{
-                RoundedRectangle(cornerRadius: 17)
-                    .frame(width: 233.0, height: 45.0)
-                    .foregroundColor(Color(red: 1.033, green: 0.823, blue: 0.749))
-                
-                Text("Video for snapchat ad")
-                    .font(.custom("SF Pro Rounded", size: 14))
-                
-                    .fontWeight(.medium)
-                    .foregroundColor(Color("LightGrey"))
-                    
-                    
-            }
-        
-            Text("9:37")
-                .font(.custom("SF Pro Rounded", size: 12))
-            
-                .fontWeight(.regular)
-                .foregroundColor(Color("LightGrey"))
-                
-                
-        
-        }
-        .padding(.leading, 120.0)
-        
-        VStack(alignment: .leading){
-        
-            ZStack{
-                RoundedRectangle(cornerRadius: 17)
-                    .frame(width: 175.0, height: 45.0)
-                    .foregroundColor(Color("CardsColor"))
-                
-                Text("How many mins?")
-                    .font(.custom("SF Pro Rounded", size: 14))
-                
-                    .fontWeight(.medium)
-                    .foregroundColor(Color("LightGrey"))
-                    
-                    
-            }
-        
-            Text("9:38")
-                .font(.custom("SF Pro Rounded", size: 12))
-            
-                .fontWeight(.regular)
-                .foregroundColor(Color("LightGrey"))
-                
-                
-        
-        }
-        .padding(.trailing, 178.0)
-        
-        VStack(alignment: .trailing){
-         
-             ZStack{
-                 RoundedRectangle(cornerRadius: 17)
-                     .frame(width: 120.0, height: 45.0)
-                     .foregroundColor(Color(red: 1.033, green: 0.823, blue: 0.749))
-                 
-                 Text("2 mins")
-                     .font(.custom("SF Pro Rounded", size: 14))
-                 
-                     .fontWeight(.medium)
-                     .foregroundColor(Color("LightGrey"))
-                     
-                     
-             }
-         
-             Text("9:39")
-                 .font(.custom("SF Pro Rounded", size: 12))
-             
-                 .fontWeight(.regular)
-                 .foregroundColor(Color("LightGrey"))
-                 
-                 
-         
-        }
-        .padding(.leading, 233.0)
-        
-        VStack(alignment: .leading){
-        
-            ZStack{
-                RoundedRectangle(cornerRadius: 17)
-                    .frame(width: 175.0, height: 45.0)
-                    .foregroundColor(Color("CardsColor"))
-                
-                Text("What is your offer?")
-                    .font(.custom("SF Pro Rounded", size: 14))
-                
-                    .fontWeight(.medium)
-                    .foregroundColor(Color("LightGrey"))
-                    
-                    
-            }
-        
-            Text("9:40")
-                .font(.custom("SF Pro Rounded", size: 12))
-            
-                .fontWeight(.regular)
-                .foregroundColor(Color("LightGrey"))
-                
-                
-        
-        }
-        .padding(.trailing, 178.0)
-    }
-    .padding(.horizontal)
-            }
-    Spacer()
-       
-    ZStack{
-        RoundedRectangle(cornerRadius: 0)
-            .frame(width: 390.0, height: 84.0)
-            .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.973, green: 0.973, blue: 0.973)/*@END_MENU_TOKEN@*/)
-                 
-        VStack{
-            HStack{
-                Button(action: { //To Do
-                    
-                }) {
-                    Image(systemName: "paperclip")
-                        .resizable()
+                VStack(spacing: 18){
+                    ForEach(recieverMsg, id: \.self) { item in
+                        if item.id == 1 {
+                            recievedMsg(msg: item.msg, time: item.time)
+                        } else {
+                            sendMsg(msg: item.msg, time: item.time)
+                        }
                         
-                        
-                        .frame(width: 25, height: 25).foregroundColor(Color("blue"))
-                       
-
+                    }
+                    Spacer()
+                    
                 }
                 
+            }
+            
+            .navigationTitle("Chat")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            HStack{
+                Image(systemName: "paperclip")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(Color("blue"))
+                    .padding(5)
+                TextField("Enter Message", text: $fullText)
+                    .padding(2)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .cornerRadius(12)
                 
-                ZStack{
-                    RoundedRectangle(cornerRadius: 12)
-                        .frame(width: 319.0, height: 40.0)
-                        .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                    HStack{
-                        TextField("Enter Message", text: $fullText)
-                            .padding(.leading)
-                          
-                .frame (width: UIScreen.main.bounds.width - 99, height:18)
-                 
-                Button(action: { //To Do
+                Button {
+                    let date = Date.now.formatted(date: .omitted, time: .shortened)
+                    let id = 2
+                    let chat = Chats(msg: fullText, time: date, id: id)
+                    recieverMsg.append(chat)
                     
-                }) {
+                } label: {
                     Image(systemName: "paperplane.circle.fill")
                         .resizable()
-                        .frame(width: 25, height: 25)
+                        .frame(width: 30, height: 30)
                         .foregroundColor(Color("blue"))
-                        .padding(.trailing)
+                        .padding(5)
                 }
-                    }
-                   
-                   
-                    
-                }
-                
             }
-            
+            .padding()
+            .background(.regularMaterial)
             
         }
-  
         
+        
+    }
+    func sendMsg(msg: String, time: String) -> some View{
+        return HStack(alignment: .bottom){
+            Text(msg)
+                .font(Font.custom("SF Compact Rounded Medium", size: 16))
+                .lineLimit(nil)
+            Spacer()
+            Text(time)
+                .foregroundColor(Color("DarkGrey"))
+                .padding(.leading, 10)
+                .font(.caption2)
+        }
+        .frame(width: 270)
+        .padding()
+        .background(Color(red: 1.033, green: 0.823, blue: 0.749))
+        .cornerRadius(17)
+        .padding(.leading, 59)
         
     }
     
-}
-
-.navigationTitle("Abhoy Latif")
-.navigationBarTitleDisplayMode(.inline)
-    .navigationBarItems(trailing: Button(action: {}) {
-        Image( "img1")
-            .resizable()
-            .frame(width: 40, height: 40)
-    })
-        
-        
-      
-        
-        
+    func recievedMsg(msg: String, time: String) -> some View{
+        return HStack(alignment: .bottom){
+            Text(msg)
+                .lineLimit(nil)
+                .font(Font.custom("SF Compact Rounded Medium", size: 16))
+            Spacer()
+            Text(time)
+                .foregroundColor(Color("DarkGrey"))
+                .padding(.leading, 10)
+                .font(.caption2)
+        }
+        .frame(width: 270)
+        .padding()
+        .background(Color("CardsColor"))
+        .cornerRadius(17)
+        .padding(.trailing, 59)
     }
 }
 

@@ -9,24 +9,9 @@ import SwiftUI
 
 struct Projects: View {
     
+    var projectClass = ProjectInfoClass()
     @State var selected = 0
     
-    //Define projectDetails for each card
-    struct ProjectData : Hashable{
-        var projectTitle: String
-        var projectDate: String
-        var status: String
-    }
-        
-    //Define array from struct
-    var projects : [ProjectData] = [
-        ProjectData(projectTitle: "Ad for Sunglasses Store", projectDate: "Date Posted: 20/01/2022", status: "Pending")
-        ,ProjectData(projectTitle: "Online Service Ad", projectDate: "Date Posted: 10/1/2022", status: "In Progress")
-        ,ProjectData(projectTitle: "Planners Project", projectDate: "Date Posted: 29/12/2021", status: "In Progress")
-        ,ProjectData(projectTitle: "Ad for Perfume", projectDate: "Date Posted: 17/09/2021", status: "Done")
-        ,ProjectData(projectTitle: "Candels Ad", projectDate: "Date Posted: 15/09/2021", status: "In Progress")
-        ,ProjectData(projectTitle: "Ad for a Service", projectDate: "Date Posted: 09/09/2021", status: "Done")
-    ]
     
     var body: some View {
         NavigationView{
@@ -48,25 +33,25 @@ struct Projects: View {
                 
                 if selected == 0 {
                     //iterating over projects
-                    ForEach(projects, id: \.self) { project in
+                    ForEach(projectClass.projects) { project in
                         cardStyle(title: project.projectTitle, date: project.projectDate, status: project.status)
                     }
                     
                 } else if selected == 1 {
-                    ForEach(projects, id: \.self) { item in
+                    ForEach(projectClass.projects) { item in
                         if item.status == "Pending"{
                             cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status)
                         }
                     }
                 } else if selected == 2 {
-                    ForEach(projects, id: \.self) { item in
+                    ForEach(projectClass.projects) { item in
                         if item.status == "In Progress"{
                             cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status)
                         }
                     }
                     
                 } else {
-                    ForEach(projects, id: \.self) { item in
+                    ForEach(projectClass.projects) { item in
                         if item.status == "Done"{
                             cardStyle(title: item.projectTitle, date: item.projectDate, status: item.status)
                         }
