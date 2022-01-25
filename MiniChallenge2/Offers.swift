@@ -11,9 +11,10 @@ struct Offers: View {
     @EnvironmentObject var offers : OffersClass
     
     @State var allProjects = 0
-    @State var showingAlert = false
+    @State var acceptAlert = false
     @State var clicked = false
     @State var rejectAlert = false
+    
     
     @State var projectID : Int
     @State var offerStatus : String
@@ -115,30 +116,30 @@ struct Offers: View {
                         HStack{
                             Button {
                                 clicked = true
+                                acceptAlert = true
                                 print(item.offerStatus)
-                                showingAlert = true
+                                
                                 
                             } label: {
-                                //  if  item.offerStatus == "Non" {
-                                Text("Accept")
-                                    .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                    .foregroundColor(.white)
-                                    .frame(width: 160, height: 40)
-                                    .background(Color("AccentColor"))
-                                    .cornerRadius(12)
-                                //  } else {
-                                //                                    Text("Accepted")
-                                //                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                //                                        .foregroundColor(.white)
-                                //                                        .frame(width: 160, height: 40)
-                                //                                        .background(Color.green)
-                                //                                        .cornerRadius(12)
-                                //                                        .disabled(clicked == false)
-                                //  }
+                                if  item.offerStatus == "Non" {
+                                    Text("Accept")
+                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                        .foregroundColor(.white)
+                                        .frame(width: 160, height: 40)
+                                        .background(Color("AccentColor"))
+                                        .cornerRadius(12)
+                                } else {
+                                    Text("Accepted")
+                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                        .foregroundColor(.white)
+                                        .frame(width: 160, height: 40)
+                                        .background(Color.green)
+                                        .cornerRadius(12)
+                                        .disabled(clicked == false)
+                                }
                                 
                                 
-                                
-                            }.alert(isPresented: $showingAlert) {
+                            }.alert(isPresented: $acceptAlert) {
                                 Alert( title: Text("Succuss ✅"),
                                        message: Text("Project status changed to In Progress"),
                                        dismissButton: .default(Text("Got it!")))
@@ -157,13 +158,14 @@ struct Offers: View {
                                     .overlay(RoundedRectangle(cornerRadius: 12)
                                                 .stroke(Color("AccentColor")))
                                 
-                                
                             }.alert(isPresented: $rejectAlert) {
-                                Alert( title: Text("Alert🔴"),
+                                Alert( title: Text("Alert 🔴"),
                                        message: Text("Ary you sure you want to reject this offer?"),
                                        primaryButton: .destructive(Text("Reject"), action: {
-                                    //                                    var index = item.id
-                                    //                                    offer.remove(at: index)
+                                    //when deleting another marketer App crashed !!!!
+                                    let index = item.id
+                                    offers.offer.remove(at: index)
+                                    print(offers.offer)
                                     
                                 })
                                        ,secondaryButton: .cancel()
