@@ -36,7 +36,7 @@ struct Offers: View {
                 if item.projectID == projectID {
                     VStack(alignment: .center, spacing: 20){
                         HStack{
-                            NavigationLink(destination: MarketerProfile()){
+                            NavigationLink(destination: MarketerProfile(id: item.marketerID)){
                                 Image(item.marketerImage)
                                     .resizable()
                                     .padding(.trailing, 1.0)
@@ -177,8 +177,6 @@ struct Offers: View {
                     .cornerRadius(12)
                     
                     //  if item.
-                    
-                    
                 }
             }
             .navigationTitle("offers")
