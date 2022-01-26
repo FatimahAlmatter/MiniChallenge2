@@ -80,7 +80,7 @@ struct Projects: View {
                 .font(Font.custom("SF Compact Rounded Medium", size: 20))
                 .foregroundColor(Color("DarkGrey"))
             
-            Text(date)
+            Text("Date Posted: \(date)")
                 .foregroundColor(Color("LightGrey"))
                 .font(Font.custom("SF Compact Rounded Medium", size: 15))
             

@@ -81,10 +81,10 @@
 		32A1339727985636004452D9 /* MiniChallenge2 */ = {
 			isa = PBXGroup;
 			children = (
+				32A1339827985636004452D9 /* MiniChallenge2App.swift */,
 				32A133D627989554004452D9 /* Launch Screen.storyboard */,
 				322E855F279FD4180019F6D5 /* ProjectInfoClass.swift */,
 				3275CC5D27A04FE10075662E /* OffersClass.swift */,
-				32A1339827985636004452D9 /* MiniChallenge2App.swift */,
 				32A1339A27985636004452D9 /* ContentView.swift */,
 				32A133A827988312004452D9 /* Onboarding.swift */,
 				32A133AA2798832B004452D9 /* Projects.swift */,

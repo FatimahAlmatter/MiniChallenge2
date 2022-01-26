@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct MiniChallenge2App: App {
-    @State var projectModel = ProjectInfoClass()
-    @State var offerModel = OffersClass()
+    @StateObject var projectModel = ProjectInfoClass()
+    @StateObject var offerModel = OffersClass()
 
     var body: some Scene {
         WindowGroup {

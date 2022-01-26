@@ -98,8 +98,8 @@ struct PostProject: View {
                     
                     HStack{
                         Button {
-                            let date = Date.now.formatted(date: .omitted, time: .shortened)
-                            let time = selectionDate.formatted(date: .complete, time: .omitted)
+                            let date = Date.now.formatted(date: .numeric, time: .omitted)
+                            let time = Date.now.formatted(date: .omitted, time: .shortened)
                             postProject(name: textName, date: date, description: textDes, comments: textOther, budget: textBudget, time: time)
                             textName = ""
                             textOther = ""
