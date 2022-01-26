@@ -14,7 +14,7 @@ struct ProjectDetails: View {
     @State  var textDesD: String = ""
     @State  var textOtherD: String = ""
     @State  var textBudgetD: String = ""
-    @State  var selectionDateD: Date = Date()
+    @State  var selectionDateD = Date()
     //// for menu
     @State var value = ""
     @State var id : Int
@@ -40,6 +40,10 @@ struct ProjectDetails: View {
 
                         DatePicker("Time", selection: $selectionDateD)
                             .font(.headline)
+                        
+//                        Text("Date is: \(item.time)")
+//                            .foregroundColor(Color("LightGrey"))
+//                            .font(.headline)
                         
                         
                         VStack(alignment: .leading, spacing:10){

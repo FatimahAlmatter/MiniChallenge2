@@ -14,7 +14,7 @@ struct PostProject: View {
     @State  var textDes: String = ""
     @State  var textOther: String = ""
     @State  var textBudget: String = ""
-    @State  var selectionDate: Date = Date()
+    @State  var selectionDate = Date()
     //// for menu
     @State var value = ""
     var placeholder = "Select Option"

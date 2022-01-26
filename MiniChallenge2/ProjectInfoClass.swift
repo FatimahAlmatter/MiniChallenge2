@@ -8,7 +8,6 @@
 import Foundation
 
 class ProjectInfoClass : ObservableObject{
-
     //Define projectDetails for each card
     struct ProjectData : Hashable, Identifiable{
         var id : Int
@@ -20,6 +19,7 @@ class ProjectInfoClass : ObservableObject{
         var otherComments: String
         var projectBudget: String
         var time: String
+       // var date = time.formatted(date: .long, time: .omitted)
 
     }
     
