@@ -15,7 +15,11 @@ struct PostProject: View {
     @State  var textOther: String = ""
     @State  var textBudget: String = ""
     @State  var selectionDate = Date()
-    //// for menu
+    
+//    @State var showProjectScreen = false
+//    @State var cancelState = false
+    
+    // for menu
     @State var value = ""
     var placeholder = "Select Option"
     var dropDownList = ["Article","Video","Social Media Post","Other"]
@@ -74,7 +78,7 @@ struct PostProject: View {
                                 .font(.system(size: 16))
                             
                         }
-                        TextField(".. ", text: $textOther)
+                        TextField("other catagory", text: $textOther)
                         
                         Text("Upload Files")
                             .fontWeight(.bold)
@@ -115,6 +119,7 @@ struct PostProject: View {
                             .background(Color("AccentColor"))
                             .cornerRadius(12)
                         
+                        Spacer()
                         
                         NavigationLink {
                             Projects()
@@ -128,12 +133,13 @@ struct PostProject: View {
                         .background(Color.white)
                         .overlay(RoundedRectangle(cornerRadius :12)
                                     .stroke(Color("AccentColor")))
+                        
                     }
+                    .padding(25)
                     
                 }
             }
             .navigationTitle("Post Project")
-            .navigationBarTitleDisplayMode(.large)
         }
         
     }

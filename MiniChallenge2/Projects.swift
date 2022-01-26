@@ -12,7 +12,6 @@ struct Projects: View {
     @EnvironmentObject var projects : ProjectInfoClass
     @State var selected = 0
     
-    
     var body: some View {
         NavigationView{
             ScrollView{
