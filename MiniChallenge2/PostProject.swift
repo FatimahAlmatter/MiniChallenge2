@@ -16,7 +16,7 @@ struct PostProject: View {
     @State  var textBudget: String = ""
     @State  var selectionDate = Date()
     
-//    @State var showProjectScreen = false
+    @State var showProjectScreen = false
 //    @State var cancelState = false
     
     // for menu
@@ -89,11 +89,12 @@ struct PostProject: View {
                                 .foregroundColor(Color.blue)
                                 .font(Font.system(size: 20, weight: .medium))
                         }
+                        
                         Text("Budget")
                             .fontWeight(.bold)
                         
                         TextField("Ex : 1000 - 2000", text: $textBudget)
-                        
+                       
                     }
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -101,7 +102,12 @@ struct PostProject: View {
                     .foregroundColor(Color("DarkGrey"))
                     
                     HStack{
+                        
+                   // if showProjectScreen{
+                    //    Projects()
+                 //   } else {
                         Button {
+                            showProjectScreen = true
                             let date = Date.now.formatted(date: .numeric, time: .omitted)
                             let time = Date.now.formatted(date: .omitted, time: .shortened)
                             postProject(name: textName, date: date, description: textDes, comments: textOther, budget: textBudget, time: time)
@@ -118,7 +124,7 @@ struct PostProject: View {
                         } .frame(width: 160, height: 40)
                             .background(Color("AccentColor"))
                             .cornerRadius(12)
-                        
+               //     }
                         Spacer()
                         
                         NavigationLink {

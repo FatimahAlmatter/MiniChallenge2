@@ -18,6 +18,7 @@ struct ProjectDetails: View {
     //// for menu
     @State var value = ""
     @State var id : Int
+    @State var showingAlert = false
     
     var placeholder = "Select Option"
     var dropDownList = ["Article","Video","Social Media Post","Other"]
@@ -37,13 +38,13 @@ struct ProjectDetails: View {
                             .fontWeight(.bold)
                         
                         TextField(item.projectDescription, text: $textDesD)
-
+                        
                         DatePicker("Time", selection: $selectionDateD)
                             .font(.headline)
                         
-//                        Text("Date is: \(item.time)")
-//                            .foregroundColor(Color("LightGrey"))
-//                            .font(.headline)
+                        //                        Text("Date is: \(item.time)")
+                        //                            .foregroundColor(Color("LightGrey"))
+                        //                            .font(.headline)
                         
                         
                         VStack(alignment: .leading, spacing:10){
@@ -116,14 +117,33 @@ struct ProjectDetails: View {
         }
         .navigationTitle("Project Details")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar(content: {
-            Text("Save")
-                .foregroundColor(Color.accentColor)
-        })
-        
+        .toolbar{
+            ToolbarItem(placement: .confirmationAction){
+               
+                Button("Save") {
+                    update()
+                    showingAlert = true
+                    //
+                }.alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Success"), message: Text("Project Updated"), dismissButton: .none)
+                }
+                
+            }
+        }
         
     }
+    
+    
+    func update(){
+        let date = Date.now.formatted(date: .numeric, time: .omitted)
+        let time = Date.now.formatted(date: .omitted, time: .shortened)
+        let post = ProjectInfoClass.ProjectData(id: id, projectTitle: textNameD, projectDate: date, status: "Pending", offerStatus: "Non", projectDescription: textDesD, otherComments: textOtherD, projectBudget: textBudgetD, time: time)
+        projects.update(project: post)
+    }
+    
+    
 }
+
 
 
 struct ProjectDetails_Previews: PreviewProvider {
