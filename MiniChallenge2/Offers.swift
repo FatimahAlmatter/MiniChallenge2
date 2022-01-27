@@ -157,9 +157,7 @@ struct Offers: View {
                                 Alert( title: Text("Alert 🔴"),
                                        message: Text("Ary you sure you want to reject this offer?")
                                        ,primaryButton: .destructive(Text("Reject"), action: {
-                                    //when deleting another marketer App crashed !!!!
-                                  //  let index = item.id
-                                    offers.offer.remove(at: item.id)
+                                    offers.deleteOffer(element: item)
                                     print(offers.offer) })
                                        ,secondaryButton: .cancel()
                                 )

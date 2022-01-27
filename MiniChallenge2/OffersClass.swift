@@ -45,4 +45,10 @@ class OffersClass : ObservableObject{
         marketer(id: 3, marketerImage: "marketer3", marketerName: "Sara", major: "Designer, Photographer", completedProjects: 7, skills: "photoshop"),
         marketer(id: 4, marketerImage: "img2", marketerName: "Fahad Bader", major: "Photographer", completedProjects: 11, skills: "video editing, photoshop")]
     
+    
+    func deleteOffer(element: offers){
+        offer = offer.filter(){ $0 != element }
+        
+    }
+    
 }
