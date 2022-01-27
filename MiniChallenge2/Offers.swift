@@ -113,33 +113,43 @@ struct Offers: View {
                         }
                         
                         HStack{
+                            
                             Button {
                                 acceptAlert = true
                                 print(item.offerStatus)
                                 
                             } label: {
-                                // if  acceptAlert == false {
-                                Text("Accept")
-                                    .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                    .foregroundColor(.white)
-                                    .frame(width: 160, height: 40)
-                                    .background(Color("AccentColor"))
-                                    .cornerRadius(12)
-                                //  } else {
-                                //                                    Text("Accepted")
-                                //                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
-                                //                                        .foregroundColor(.white)
-                                //                                        .frame(width: 160, height: 40)
-                                //                                        .background(Color.green)
-                                //                                        .cornerRadius(12)
-                                //      }
-                                
+                                if acceptAlert == false {
+                                    Text("Accept")
+                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                        .foregroundColor(.white)
+                                        .frame(width: 160, height: 40)
+                                        .background(Color("AccentColor"))
+                                        .cornerRadius(12)
+                                } else {
+                                    Text("Accepted")
+                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                        .foregroundColor(.white)
+                                        .frame(width: 160, height: 40)
+                                        .background(Color.green)
+                                        .cornerRadius(12)
+                                }
+
                                 
                             }.alert(isPresented: $acceptAlert) {
-                                Alert( title: Text("Succuss ✅"),
-                                       message: Text("Project status changed to In Progress"),
-                                       dismissButton: .default(Text("Got it!")))
-                            }.disabled(acceptAlert == true)
+                                Alert(title: Text("Succuss ✅"),
+                                      message: Text("Project status changed to In Progress"),
+                                      dismissButton: .default(Text("Got it!"), action: {
+                                    //TO DO: Change status of offer to accepted
+                                    acceptAlert = true
+
+                                    
+                                }))
+                            }.disabled(acceptAlert)
+
+                            
+                            
+                            
                             
                             
                             Button {

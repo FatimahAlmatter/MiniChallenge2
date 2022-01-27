@@ -50,5 +50,6 @@ class OffersClass : ObservableObject{
         offer = offer.filter(){ $0 != element }
         
     }
+  
     
 }
