@@ -124,9 +124,7 @@ struct PostProject: View {
                         } .frame(width: 160, height: 40)
                             .background(Color("AccentColor"))
                             .cornerRadius(12)
-               //     }
-                        Spacer()
-                        
+              
                         NavigationLink {
                             Projects()
                         } label: {
@@ -141,7 +139,6 @@ struct PostProject: View {
                                     .stroke(Color("AccentColor")))
                         
                     }
-                    .padding(25)
                     
                 }
             }
