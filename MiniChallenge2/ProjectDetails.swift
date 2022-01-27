@@ -15,6 +15,13 @@ struct ProjectDetails: View {
     @State  var textOtherD: String = ""
     @State  var textBudgetD: String = ""
     @State  var selectionDateD = Date()
+    
+    var dateFormatter : DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }
+    
     //// for menu
     @State var value = ""
     @State var id : Int
@@ -39,12 +46,8 @@ struct ProjectDetails: View {
                         
                         TextField(item.projectDescription, text: $textDesD)
                         
-                        DatePicker("Time", selection: $selectionDateD)
-                            .font(.headline)
+                        DatePicker("Time", selection: $selectionDateD, in: Date()..., displayedComponents: .date)
                         
-                        //                        Text("Date is: \(item.time)")
-                        //                            .foregroundColor(Color("LightGrey"))
-                        //                            .font(.headline)
                         
                         
                         VStack(alignment: .leading, spacing:10){
@@ -62,7 +65,7 @@ struct ProjectDetails: View {
                             } label: {
                                 VStack(alignment:.leading ,spacing: 5){
                                     HStack{
-                                        Text(value.isEmpty ? placeholder : value)
+                                        Text(value.isEmpty ? item.catagory : placeholder )
                                             .foregroundColor(value.isEmpty ? .gray : Color("LightGrey"))
                                         Spacer()
                                         Image(systemName: "chevron.down")
@@ -136,8 +139,8 @@ struct ProjectDetails: View {
     
     func update(){
         let date = Date.now.formatted(date: .numeric, time: .omitted)
-        let time = Date.now.formatted(date: .omitted, time: .shortened)
-        let post = ProjectInfoClass.ProjectData(id: id, projectTitle: textNameD, projectDate: date, status: "Pending", offerStatus: "Non", projectDescription: textDesD, otherComments: textOtherD, projectBudget: textBudgetD, time: time)
+        let time = dateFormatter.string(from: selectionDateD)
+        let post = ProjectInfoClass.ProjectData(id: id, projectTitle: textNameD, projectDate: date, status: "Pending", offerStatus: "Non", projectDescription: textDesD, otherComments: textOtherD, projectBudget: textBudgetD, time: time, catagory: value)
         projects.update(project: post)
     }
     

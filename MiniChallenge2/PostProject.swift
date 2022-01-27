@@ -17,7 +17,12 @@ struct PostProject: View {
     @State  var selectionDate = Date()
     
     @State var showProjectScreen = false
-//    @State var cancelState = false
+    var dateFormatter : DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }
+   
     
     // for menu
     @State var value = ""
@@ -40,7 +45,8 @@ struct PostProject: View {
                         TextField("Enter project description", text: $textDes)
                         
                         Group{
-                            DatePicker("Time", selection: $selectionDate)
+                            DatePicker("Time", selection: $selectionDate, in: Date()..., displayedComponents: .date)
+
                                 .font(.headline)
                             
                             VStack(alignment: .leading, spacing:10){
@@ -75,13 +81,13 @@ struct PostProject: View {
                             }
                             Text("Others")
                                 .fontWeight(.bold)
-                                .font(.system(size: 16))
                             
                         }
                         TextField("other catagory", text: $textOther)
                         
                         Text("Upload Files")
                             .fontWeight(.bold)
+                        
                         HStack{
                             
                             TextField("Files", text: .constant(""))
@@ -93,28 +99,30 @@ struct PostProject: View {
                         Text("Budget")
                             .fontWeight(.bold)
                         
+                        
                         TextField("Ex : 1000 - 2000", text: $textBudget)
-                       
+                        
                     }
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .font(Font.custom("SF Compact Rounded Medium", size: 16))
+                    .font(Font.custom("SF Compact Rounded Medium", size: 17))
                     .foregroundColor(Color("DarkGrey"))
                     
                     HStack{
                         
-                   // if showProjectScreen{
-                    //    Projects()
-                 //   } else {
+                        // if showProjectScreen{
+                        //    Projects()
+                        //   } else {
                         Button {
                             showProjectScreen = true
                             let date = Date.now.formatted(date: .numeric, time: .omitted)
-                            let time = Date.now.formatted(date: .omitted, time: .shortened)
-                            postProject(name: textName, date: date, description: textDes, comments: textOther, budget: textBudget, time: time)
+                            let time = dateFormatter.string(from: selectionDate)
+                            postProject(name: textName, date: date, description: textDes, comments: textOther, budget: textBudget, time: time, catagory: value)
                             textName = ""
                             textOther = ""
                             textBudget = ""
                             textDes = ""
+                            value = ""
                             print(projects.projects)
                         } label: {
                             Text("Post")
@@ -124,7 +132,8 @@ struct PostProject: View {
                         } .frame(width: 160, height: 40)
                             .background(Color("AccentColor"))
                             .cornerRadius(12)
-              
+                        
+                        
                         NavigationLink {
                             Projects()
                         } label: {
@@ -148,9 +157,9 @@ struct PostProject: View {
     }
     
     
-    func postProject(name: String, date: String, description: String, comments: String, budget: String, time: String){
+    func postProject(name: String, date: String, description: String, comments: String, budget: String, time: String, catagory:String){
         let id = projects.projects.count + 1
-        let post = ProjectInfoClass.ProjectData(id: id, projectTitle: name, projectDate: date, status: "Pending", offerStatus: "Non", projectDescription: description, otherComments: comments, projectBudget: budget, time: time)
+        let post = ProjectInfoClass.ProjectData(id: id, projectTitle: name, projectDate: date, status: "Pending", offerStatus: "Non", projectDescription: description, otherComments: comments, projectBudget: budget, time: time, catagory: catagory)
         // add to begin
         projects.projects.insert(post, at: 0)
         // projects.projects.append(post)
