@@ -19,11 +19,11 @@ struct DirectMessages: View {
     
     //Define array from struct
     var messages: [MessageDetails] = [
-        MessageDetails(marketerName: "Abhoy Latif", message: "and what is your Offer?", image: "img1", unreadMsg: "1")
-        ,MessageDetails(marketerName: "Abbie Wilson", message: "how much will pay?", image: "img2", unreadMsg: "0")
-        ,MessageDetails(marketerName: "Abayo Stevens", message: "can you extend submission date?", image: "img3", unreadMsg: "0")
-        ,MessageDetails(marketerName: "Aasiya Jayavant", message: "thank you", image: "Group 5", unreadMsg: "0")
-        ,MessageDetails(marketerName: "Aaron Almaraz", message: "thank you", image: "img5", unreadMsg: "0")]
+        MessageDetails(marketerName: "Khaled Ali", message: "and what is your Offer?", image: "img1", unreadMsg: "1")
+        ,MessageDetails(marketerName: "Fahad Bader", message: "how much will pay?", image: "img2", unreadMsg: "0")
+        ,MessageDetails(marketerName: "Sara", message: "can you extend submission date?", image: "marketer3", unreadMsg: "0")
+        ,MessageDetails(marketerName: "Norah Saad", message: "thank you", image: "img3", unreadMsg: "0")
+        ,MessageDetails(marketerName: "Nora faisal", message: "thank you", image: "marketer2", unreadMsg: "0")]
     
     var body: some View {
         NavigationView{
