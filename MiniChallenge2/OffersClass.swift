@@ -20,7 +20,26 @@ class OffersClass : ObservableObject{
         var offerStatus: String
         var marketerID : Int
         
+        init(id : Int, marketerName: String, priceoffers: String, timeoffers: String, marketerImage: String, projectID: Int, offerStatus: String, marketerID : Int)  {
+            self.id = id
+            self.marketerName = marketerName
+            self.priceoffers = priceoffers
+            self.timeoffers = timeoffers
+            self.marketerImage = marketerImage
+            self.projectID = projectID
+            self.offerStatus = offerStatus
+            self.marketerID = marketerID
+            
+        }
+        
+        func updateOffer() -> offers{
+            return offers(id: id, marketerName: marketerName, priceoffers: priceoffers, timeoffers: timeoffers, marketerImage: marketerImage, projectID: projectID, offerStatus: "Accepted", marketerID: marketerID)
+            
+        }
+        
     }
+    
+   
     
     struct marketer: Hashable, Identifiable {
         var id: Int
@@ -50,6 +69,13 @@ class OffersClass : ObservableObject{
         offer = offer.filter(){ $0 != element }
         
     }
+    
+    func update(item: offers){
+        if let index = offer.firstIndex(where: { $0.id == item.id }) {
+            offer[index] = item.updateOffer()
+        }
+    }
+    
   
     
 }

@@ -98,7 +98,6 @@ struct Offers: View {
                             Text(item.priceoffers)
                                 .font(.custom("SF Compact Rounded Meduim", size: 20))
                                 .foregroundColor(Color("DarkGrey"))
-                            //.padding(.trailing, 70.0)
                             Spacer()
                             
                             Image(systemName: "clock")
@@ -116,39 +115,44 @@ struct Offers: View {
                             
                             Button {
                                 acceptAlert = true
-                                print(item.offerStatus)
+                                print("before: \(item.offerStatus)")
+                                offers.update(item: item)
+                                
                                 
                             } label: {
-                                if acceptAlert == false {
+                                if item.offerStatus == "None" {
                                     Text("Accept")
                                         .font(Font.custom("SF Compact Rounded Medium", size: 15))
                                         .foregroundColor(.white)
                                         .frame(width: 160, height: 40)
                                         .background(Color("AccentColor"))
                                         .cornerRadius(12)
-                                } else {
+                                    
+                                } else if item.offerStatus == "Accepted"{
                                     Text("Accepted")
                                         .font(Font.custom("SF Compact Rounded Medium", size: 15))
                                         .foregroundColor(.white)
                                         .frame(width: 160, height: 40)
                                         .background(Color.green)
                                         .cornerRadius(12)
+                                } else {
+                                    Text("Accept")
+                                        .font(Font.custom("SF Compact Rounded Medium", size: 15))
+                                        .foregroundColor(.white)
+                                        .frame(width: 160, height: 40)
+                                        .background(Color("AccentColor"))
+                                        .cornerRadius(12)
                                 }
-
+                                
                                 
                             }.alert(isPresented: $acceptAlert) {
                                 Alert(title: Text("Succuss ✅"),
                                       message: Text("Project status changed to In Progress"),
                                       dismissButton: .default(Text("Got it!"), action: {
-                                    //TO DO: Change status of offer to accepted
-                                    acceptAlert = true
-
+                                    print("after: \(item.offerStatus)")
                                     
                                 }))
-                            }.disabled(acceptAlert)
-
-                            
-                            
+                            }
                             
                             
                             
